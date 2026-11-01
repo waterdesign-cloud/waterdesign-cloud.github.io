@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html style="background: #1B1C20;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PH 遊戲內儲值體驗｜RLZ's Portfolio</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RLZ's Portfolio">
+<meta property="og:title" content="PH 遊戲內儲值體驗｜RLZ's Portfolio">
+<meta property="og:image" content="https://portfolio.rlzdesign.workers.dev/assets/og_cover.jpg">
+<meta property="og:url" content="https://portfolio.rlzdesign.workers.dev/UIUX_01_SDK_UX.dc.html">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<style id="preload-bg">html, body { margin: 0; background: #1B1C20; } @view-transition { navigation: auto; } ::view-transition-old(root), ::view-transition-new(root) { animation: none; }</style>
+<style id="pt-loader-css">#pt-loader{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B1C20;transition:opacity 450ms ease}#pt-loader.done{opacity:0;pointer-events:none}#pt-loader i{display:block;width:160px;height:1px;overflow:hidden;background:#F2F2F233}#pt-loader b{display:block;height:100%;background:#F2F2F2;transform-origin:left;transform:scaleX(0);animation:ptLoad 10s cubic-bezier(.08,.6,.2,1) forwards}#pt-loader span{font-family:'Noto Sans TC',sans-serif;font-weight:300;font-size:14px;line-height:24px;letter-spacing:0;color:#F2F2F2;font-variant-numeric:tabular-nums}@keyframes ptLoad{to{transform:scaleX(.92)}}@media (prefers-reduced-motion:reduce){#pt-loader b{animation-duration:.01s}}</style>
+<script id="pt-loader-js">(function(){var raf,ready=false,last=performance.now(),t0=performance.now();try{new PerformanceObserver(function(l){if(l.getEntries().length)last=performance.now()}).observe({type:'resource',buffered:true})}catch(e){}function pct(b){var m=getComputedStyle(b).transform;var a=m&&m!=='none'?parseFloat(m.split('(')[1]):0;return Math.round(a*100)}function idle(){return ready&&document.readyState==='complete'&&(!document.fonts||document.fonts.status==='loaded')&&performance.now()-last>700}function tick(){var el=document.getElementById('pt-loader');if(!el){if(!window.__ptDone)raf=requestAnimationFrame(tick);return}var b=el.querySelector('b'),n=el.querySelector('span');if(b&&n)n.textContent=pct(b)+'%';if(idle()||performance.now()-t0>20000){finish();return}raf=requestAnimationFrame(tick)}raf=requestAnimationFrame(tick);setTimeout(function(){finish()},20000);function finish(){if(window.__ptDone)return;window.__ptDone=true;cancelAnimationFrame(raf);var el=document.getElementById('pt-loader');if(!el){run();return}var b=el.querySelector('b'),n=el.querySelector('span');var t=getComputedStyle(b).transform;b.style.animation='none';b.style.transform=t;b.offsetWidth;b.style.transition='transform 260ms ease';b.style.transform='scaleX(1)';setTimeout(function(){if(n)n.textContent='100%';el.classList.add('done');run()},280);setTimeout(function(){el.remove()},800)}var cbs=[];function run(){var l=cbs;cbs=[];l.forEach(function(f){try{f()}catch(e){}})}window.__ptFinish=function(cb){ready=true;if(cb)cbs.push(cb);if(window.__ptDone&&!document.getElementById('pt-loader'))run()};window.addEventListener('pageshow',function(e){if(e.persisted)finish()})})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<div id="pt-loader" aria-hidden="true"><i><b></b></i><span>0%</span></div>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&amp;family=Noto+Sans+TC:wght@200;300;400&amp;display=swap">
+<link rel="stylesheet" href="_ds/portfolio-design-system-03ed5cab-7880-4aa2-b819-a2eaba3528c8/tokens/tokens.css">
+<script src="_ds/portfolio-design-system-03ed5cab-7880-4aa2-b819-a2eaba3528c8/_ds_bundle.js"></script>
+<script src="page-transition.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { background: #1B1C20; }
+  a { color: #F2F2F2; text-decoration: none; }
+  a:hover { color: #A7A7A7; }
+</style>
+</helmet>
+
+<div style="position: fixed; inset: 0; z-index: 100; background: #1B1C20; opacity: {{ coverOpacity }}; pointer-events: {{ coverPointer }}; transition: opacity 420ms ease-out;"></div>
+<div aria-hidden="true" style="position: fixed; inset: 0; z-index: 101; pointer-events: none; background: {{ coverBg }}; opacity: {{ leaveOpacity }}; transition: opacity 300ms ease-out;"></div>
+
+<div style="background: #1B1C20; color: var(--color-primary, #F2F2F2);">
+
+  <dc-import name="Com_Project_Hero" src="assets/gameux_img_cover.webp" src1x="assets/gameux_img_cover-1x.webp" alt="PlayHorny 主視覺" hint-size="100%,500px">
+    <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 70;"><dc-import name="Com_Nav" current="" tone="dark" on-navigate="{{ nav }}" hint-size="100%,108px"></dc-import></div>
+  </dc-import>
+
+  <main style="box-sizing: border-box; width: 100%; max-width: calc(min(1460px, max(76.04vw, 720px)) + 2 * clamp(20px, 4vw, 64px)); margin: 0 auto; padding: 0 clamp(20px, 4vw, 64px) clamp(200px, 18vh, 300px); display: flex; flex-direction: column;">
+
+    <dc-import name="Com_Project_Head" brand="PlayHorny" subtitle="遊戲內儲值 ( UX )" quote="希望 PlayHorny 的遊戲內儲值服務更直覺，並可以看懂派對卡訂閱方案與回饋，順暢完成付款。" about="PlayHorny 平台提供遊戲下載、點數儲值、派對卡（會員）訂閱、商城及遊戲宣傳活動等完整的遊戲服務。
+本專案聚焦於 PlayHorny 提供的遊戲內儲值體驗，涵蓋派對卡（會員）訂閱、點數儲值與付款流程。" tags="UX Design" category="In-Game Commerce" device="Portrait &amp; Landscape" date="2025 ~ 2026" people="{{ people }}" software="{{ software }}" on-back="{{ goBack }}" hint-size="100%,1100px"></dc-import>
+
+    <dc-import name="Com_Project_Section" title="舊版問題蒐集" first="true" hint-size="100%,400px">
+      <img src="assets/gameux_img_block1-1x.webp" srcset="assets/gameux_img_block1-1x.webp 1x, assets/gameux_img_block1.webp 2x" alt="舊版問題蒐集 — 客服回報、玩家反饋" loading="lazy" decoding="async" width="2400" height="1888" style="display: block; width: 100%; height: auto;">
+    </dc-import>
+    <dc-import name="Com_Project_Section" title="舊版痛點分析" hint-size="100%,400px">
+      <div style="display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px);">
+        <img src="assets/gameux_img_block2-1-1x.webp" srcset="assets/gameux_img_block2-1-1x.webp 1x, assets/gameux_img_block2-1.webp 2x" alt="Before IA — 舊版資訊架構" loading="lazy" decoding="async" width="2400" height="1522" style="display: block; width: 100%; height: auto;">
+        <div style="box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%); width: min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))); overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; cursor: grab; user-select: none;" data-drag-scroll="">
+          <img src="assets/gameux_img_block2-2-1x.webp" srcset="assets/gameux_img_block2-2-1x.webp 1x, assets/gameux_img_block2-2.webp 2x" alt="Before User Flow — HCoin 儲值" loading="lazy" decoding="async" width="2293" height="1242" draggable="false" style="display: block; width: calc(min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))) * 1.4331); max-width: none; height: auto;">
+        </div>
+        <div style="box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%); width: min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))); overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; cursor: grab; user-select: none;" data-drag-scroll="">
+          <img src="assets/gameux_img_block2-3-1x.webp" srcset="assets/gameux_img_block2-3-1x.webp 1x, assets/gameux_img_block2-3.webp 2x" alt="Before User Flow — 派對卡訂閱" loading="lazy" decoding="async" width="2328" height="1118" draggable="false" style="display: block; width: calc(min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))) * 1.455); max-width: none; height: auto;">
+        </div>
+      </div>
+    </dc-import>
+    <dc-import name="Com_Project_Section" title="競品 / 相關資料搜集" hint-size="100%,400px">
+      <div style="box-sizing: border-box; width: min(1200px, max(62.5vw, 592px), 100%); margin: 0 auto; display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px);">
+        <img src="assets/gameux_img_block3-1-1x.webp" srcset="assets/gameux_img_block3-1-1x.webp 1x, assets/gameux_img_block3-1.webp 2x" alt="What I think — 問題思考" loading="lazy" decoding="async" width="2400" height="1368" style="display: block; width: 100%; height: auto;">
+        <img src="assets/gameux_img_block3-2-1x.webp" srcset="assets/gameux_img_block3-2-1x.webp 1x, assets/gameux_img_block3-2.webp 2x" alt="風格參考 — 新潮方向" loading="lazy" decoding="async" width="2400" height="1326" style="display: block; width: 100%; height: auto;">
+        <img src="assets/gameux_img_block3-3-1x.webp" srcset="assets/gameux_img_block3-3-1x.webp 1x, assets/gameux_img_block3-3.webp 2x" alt="儲值中心參考 — 頁面佈局、Header、商品卡、派對卡" loading="lazy" decoding="async" width="2400" height="3124" style="display: block; width: 100%; height: auto;">
+        <img src="assets/gameux_img_block3-4-1x.webp" srcset="assets/gameux_img_block3-4-1x.webp 1x, assets/gameux_img_block3-4.webp 2x" alt="派對卡福利參考 — 訂閱福利一覽" loading="lazy" decoding="async" width="2400" height="1554" style="display: block; width: 100%; height: auto;">
+        <img src="assets/gameux_img_block3-5-1x.webp" srcset="assets/gameux_img_block3-5-1x.webp 1x, assets/gameux_img_block3-5.webp 2x" alt="已訂閱派對卡參考 — 進度條、會員狀態、資訊卡片" loading="lazy" decoding="async" width="2400" height="2582" style="display: block; width: 100%; height: auto;">
+      </div>
+    </dc-import>
+    <dc-import name="Com_Project_Section" title="痛點與解決方向" hint-size="100%,400px">
+      <img src="assets/gameux_img_block4-1-1x.webp" srcset="assets/gameux_img_block4-1-1x.webp 1x, assets/gameux_img_block4-1.webp 2x" alt="痛點與解決方向 — P1～P8 對應解法" loading="lazy" decoding="async" width="2400" height="1616" style="display: block; width: 100%; height: auto;">
+    </dc-import>
+    <dc-import name="Com_Project_Section" title="新版設計" hint-size="100%,400px">
+      <div style="display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px);">
+        <img src="assets/gameux_img_block5-1-1x.webp" srcset="assets/gameux_img_block5-1-1x.webp 1x, assets/gameux_img_block5-1.webp 2x" alt="After IA — 新版資訊架構" loading="lazy" decoding="async" width="2400" height="2254" style="display: block; width: 100%; height: auto;">
+        <div style="box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%); width: min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))); overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; cursor: grab; user-select: none;" data-drag-scroll="">
+          <img src="assets/gameux_img_block5-2-1x.webp" srcset="assets/gameux_img_block5-2-1x.webp 1x, assets/gameux_img_block5-2.webp 2x" alt="After User Flow — HCoin 儲值" loading="lazy" decoding="async" width="2905" height="1242" draggable="false" style="display: block; width: calc(min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))) * 1.8156); max-width: none; height: auto;">
+        </div>
+        <div style="box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%); width: min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))); overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; cursor: grab; user-select: none;" data-drag-scroll="">
+          <img src="assets/gameux_img_block5-3-1x.webp" srcset="assets/gameux_img_block5-3-1x.webp 1x, assets/gameux_img_block5-3.webp 2x" alt="After User Flow — 派對卡訂閱" loading="lazy" decoding="async" width="2831" height="1260" draggable="false" style="display: block; width: calc(min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))) * 1.7694); max-width: none; height: auto;">
+        </div>
+        <img src="assets/gameux_img_block5-4-1x.webp" srcset="assets/gameux_img_block5-4-1x.webp 1x, assets/gameux_img_block5-4.webp 2x" alt="After — 名詞說明、派對卡會員福利、會員等級" loading="lazy" decoding="async" width="2400" height="5974" style="display: block; width: 100%; height: auto;">
+      </div>
+    </dc-import>
+    <dc-import name="Com_Project_Section" title="改版成果" hint-size="100%,400px">
+      <img src="assets/gameux_img_block6-1-1x.webp" srcset="assets/gameux_img_block6-1-1x.webp 1x, assets/gameux_img_block6-1.webp 2x" alt="改版成果 — 付款流程、派對卡福利提前呈現、說明頁面" loading="lazy" decoding="async" width="2400" height="1926" style="display: block; width: 100%; height: auto;">
+    </dc-import>
+  </main>
+</div>
+
+<dc-import name="Com_ToTop" tone="dark" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { leaving: false, loaded: false };
+
+  componentDidMount() {
+    const go = () => window.PT ? window.PT.mount(this, { fallback: 4000, hero: true }) : setTimeout(go, 16);
+    go();
+    this._bindDrag();
+  }
+  _bindDrag() {
+    const els = document.querySelectorAll('[data-drag-scroll]');
+    this._dragN = (this._dragN || 0) + 1;
+    if (els.length < 4 && this._dragN < 50) this._dragT = setTimeout(() => this._bindDrag(), 200);
+    els.forEach(el => {
+      if (el._drag) return; el._drag = true;
+      let down = false, x0 = 0, s0 = 0;
+      el.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; x0 = e.clientX; s0 = el.scrollLeft; el.style.cursor = 'grabbing'; el.setPointerCapture(e.pointerId); });
+      el.addEventListener('pointermove', e => { if (down) el.scrollLeft = s0 - (e.clientX - x0); });
+      const up = () => { down = false; el.style.cursor = 'grab'; };
+      el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
+    });
+  }
+  componentWillUnmount() { clearTimeout(this._fallback); clearTimeout(this._dragT); }
+
+  navigate(url) { window.PT ? window.PT.navigate(this, url) : (window.location.href = url); }
+
+
+  renderVals() {
+    return {
+      people: [
+        { avatar: 'assets/uiux_img_user3.webp', name: 'PlayHorny', role: 'Customer Service' },
+        { avatar: 'assets/uiux_img_user4.webp', name: 'PlayHorny', role: 'Product User' }
+      ],
+      software: [
+        { icon: 'assets/uiux_icon_figma.webp', label: 'Figma' }
+      ],
+      goBack: () => this.navigate('Page_UIUX.dc.html'),
+      nav: (url) => this.navigate(url),
+      ...(window.PT ? window.PT.cover(this) : { coverOpacity: 1, coverPointer: 'auto', leaveOpacity: 0, coverBg: '#1B1C20' })
+    };
+  }
+}
+</script>
+</body>
+</html>
