@@ -27,15 +27,16 @@
     <sc-if value="{{ notHome }}" hint-placeholder-val="{{ true }}">
       <a href="{{ homeHref }}" onClick="{{ goHome }}" style="color: {{ ink }}; text-decoration: none; padding: 2px 0; transition: color 200ms ease;" style-hover="color: {{ inkHover }};">HOME</a>
     </sc-if>
-    <sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
-      <span aria-current="page" style="color: {{ ink }}; padding: 2px 0; cursor: default; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px;">WORK FILE</span>
-    </sc-if>
-    <sc-if value="{{ notAbout }}" hint-placeholder-val="{{ true }}">
-      <a href="Page_WorkFile.dc.html" onClick="{{ goAbout }}" style="color: {{ ink }}; text-decoration: none; padding: 2px 0; transition: color 200ms ease;" style-hover="color: {{ inkHover }};">WORK FILE</a>
-    </sc-if>
     <div style="position: relative; display: flex; align-items: center;">
-      <span onClick="{{ toggleWork }}" style="display: flex; align-items: center; gap: 8px; color: {{ ink }}; cursor: pointer; padding: 2px 0; user-select: none; transition: color 200ms ease;" style-hover="color: {{ inkHover }};">WORKS<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display: block; transform: translateY(1px);"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
-      <div style="position: absolute; top: 100%; right: 0; display: flex; flex-direction: column; gap: 16px; padding: 18px; min-width: 160px; margin-top: 14px; background: #111110; border: 1px solid #111110; border-radius: 4px; box-shadow: 7px 4px 8px rgba(20, 24, 16, 0.30); font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: clamp(14px, 1.04vw, 20px); line-height: 1.25; letter-spacing: 0; opacity: {{ workMenuOpacity }}; transform: {{ workMenuTransform }}; pointer-events: {{ workMenuPointer }}; transition: opacity 220ms ease, transform 220ms ease;">
+      <button type="button" onClick="{{ toggleFile }}" aria-haspopup="true" aria-expanded="{{ fileOpenAttr }}" style="display: flex; align-items: center; gap: 8px; margin: 0; padding: 2px 0; border: 0; background: none; font: inherit; color: {{ ink }}; cursor: pointer; user-select: none; text-decoration: {{ fileDeco }}; text-decoration-thickness: 1px; text-underline-offset: 6px; transition: color 200ms ease;" style-hover="color: {{ inkHover }};">WORK FILE<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: block; transform: translateY(1px);"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div style="position: absolute; top: 100%; right: 0; display: flex; flex-direction: column; gap: 16px; padding: 18px; min-width: 160px; margin-top: 14px; background: #111110; border: 1px solid #111110; border-radius: 4px; box-shadow: 7px 4px 8px rgba(20, 24, 16, 0.30); font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: clamp(14px, 1.04vw, 20px); line-height: 1.25; letter-spacing: 0; opacity: {{ fileMenuOpacity }}; transform: {{ fileMenuTransform }}; pointer-events: {{ fileMenuPointer }}; visibility: {{ fileMenuVis }}; transition: opacity 220ms ease, transform 220ms ease;">
+        <a href="WorkFile_Experience.dc.html" onClick="{{ goAbout }}" style="color: #f5f5f0; text-decoration: none; white-space: nowrap; transition: color 200ms ease;" style-hover="color: #a8a8a2;">Experience</a>
+        <a href="WorkFile_AboutMe.dc.html" onClick="{{ goAboutMe }}" style="color: #f5f5f0; text-decoration: none; white-space: nowrap; transition: color 200ms ease;" style-hover="color: #a8a8a2;">About Me</a>
+      </div>
+    </div>
+    <div style="position: relative; display: flex; align-items: center;">
+      <button type="button" onClick="{{ toggleWork }}" aria-haspopup="true" aria-expanded="{{ workOpenAttr }}" style="display: flex; align-items: center; gap: 8px; margin: 0; padding: 2px 0; border: 0; background: none; font: inherit; color: {{ ink }}; cursor: pointer; user-select: none; transition: color 200ms ease;" style-hover="color: {{ inkHover }};">WORKS<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: block; transform: translateY(1px);"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div style="position: absolute; top: 100%; right: 0; display: flex; flex-direction: column; gap: 16px; padding: 18px; min-width: 160px; margin-top: 14px; background: #111110; border: 1px solid #111110; border-radius: 4px; box-shadow: 7px 4px 8px rgba(20, 24, 16, 0.30); font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: clamp(14px, 1.04vw, 20px); line-height: 1.25; letter-spacing: 0; opacity: {{ workMenuOpacity }}; transform: {{ workMenuTransform }}; pointer-events: {{ workMenuPointer }}; visibility: {{ workMenuVis }}; transition: opacity 220ms ease, transform 220ms ease;">
         <a href="Page_UIUX.dc.html" onClick="{{ goUiux }}" style="color: #f5f5f0; text-decoration: none; white-space: nowrap; transition: color 200ms ease;" style-hover="color: #a8a8a2;">UIUX Journey</a>
         <a href="Page_Graphic.dc.html" onClick="{{ goGraphic }}" style="color: #f5f5f0; text-decoration: none; white-space: nowrap; transition: color 200ms ease;" style-hover="color: #a8a8a2;">Graphic Design</a>
       </div>
@@ -43,11 +44,11 @@
   </nav>
 </header>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1440px&quot;,&quot;height&quot;:&quot;260px&quot;},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;uiux&quot;,&quot;graphic&quot;,&quot;&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;'home'|'about'|'uiux'|'graphic'|''&quot;},&quot;tone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light'|'dark'&quot;},&quot;onNavigate&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(url: string) =&gt; void&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1440px&quot;,&quot;height&quot;:&quot;260px&quot;},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;aboutme&quot;,&quot;uiux&quot;,&quot;graphic&quot;,&quot;&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;'home'|'about'|'aboutme'|'uiux'|'graphic'|''&quot;},&quot;tone&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light'|'dark'&quot;},&quot;onNavigate&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(url: string) =&gt; void&quot;}}">
 class Component extends DCLogic {
-  state = { workOpen: false, scrolled: false };
+  state = { workOpen: false, fileOpen: false, scrolled: false };
   componentDidMount() {
-    this._close = () => { if (this.state.workOpen) this.setState({ workOpen: false }); };
+    this._close = () => { if (this.state.workOpen || this.state.fileOpen) this.setState({ workOpen: false, fileOpen: false }); };
     window.addEventListener('click', this._close);
     this._onScroll = () => { const s = window.scrollY > 8; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
     window.addEventListener('scroll', this._onScroll, { passive: true });
@@ -58,25 +59,36 @@ class Component extends DCLogic {
   componentWillUnmount() { window.removeEventListener('click', this._close); window.removeEventListener('scroll', this._onScroll); }
   go(e, url) {
     e.preventDefault();
-    this.setState({ workOpen: false });
-    if (this.props.onNavigate) this.props.onNavigate(url); else window.location.href = (url === 'Page_Home.dc.html' && /github\.io$|workers\.dev$|pages\.dev$/.test(location.hostname)) ? './' : url;
+    this.setState({ workOpen: false, fileOpen: false });
+    if (this.props.onNavigate) this.props.onNavigate(url); else window.location.href = (url === 'index.html' && /github\.io$|workers\.dev$|pages\.dev$/.test(location.hostname)) ? './' : url;
   }
   renderVals() {
     const cur = this.props.current ?? '';
     const dark = this.props.tone === 'dark';
     const open = this.state.workOpen;
+    const fOpen = this.state.fileOpen;
+    const inFile = cur === 'about' || cur === 'aboutme';
     return {
-      homeHref: /github\.io$|workers\.dev$|pages\.dev$/.test(location.hostname) ? './' : 'Page_Home.dc.html',
+      homeHref: /github\.io$|workers\.dev$|pages\.dev$/.test(location.hostname) ? './' : 'index.html',
       isHome: cur === 'home', notHome: cur !== 'home',
-      isAbout: cur === 'about', notAbout: cur !== 'about',
-      goHome: (e) => this.go(e, 'Page_Home.dc.html'),
-      goAbout: (e) => this.go(e, 'Page_WorkFile.dc.html'),
+      fileDeco: inFile ? 'underline' : 'none',
+      goHome: (e) => this.go(e, 'index.html'),
+      goAbout: (e) => this.go(e, 'WorkFile_Experience.dc.html'),
+      goAboutMe: (e) => this.go(e, 'WorkFile_AboutMe.dc.html'),
+      toggleFile: (e) => { e.stopPropagation(); this.setState(s => ({ fileOpen: !s.fileOpen, workOpen: false })); },
+      fileOpenAttr: fOpen ? 'true' : 'false',
+      fileMenuOpacity: fOpen ? 1 : 0,
+      fileMenuTransform: fOpen ? 'translateY(0)' : 'translateY(-6px)',
+      fileMenuPointer: fOpen ? 'auto' : 'none',
+      fileMenuVis: fOpen ? 'visible' : 'hidden',
       goUiux: (e) => this.go(e, 'Page_UIUX.dc.html'),
       goGraphic: (e) => this.go(e, 'Page_Graphic.dc.html'),
-      toggleWork: (e) => { e.stopPropagation(); this.setState(s => ({ workOpen: !s.workOpen })); },
+      toggleWork: (e) => { e.stopPropagation(); this.setState(s => ({ workOpen: !s.workOpen, fileOpen: false })); },
       workMenuOpacity: open ? 1 : 0,
       workMenuTransform: open ? 'translateY(0)' : 'translateY(-6px)',
       workMenuPointer: open ? 'auto' : 'none',
+      workMenuVis: open ? 'visible' : 'hidden',
+      workOpenAttr: open ? 'true' : 'false',
       barBlur: 'blur(1px)',
       barOpacity: this.state.scrolled ? 1 : 0,
       ink: dark ? 'var(--color-primary)' : '#111110',

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background: #1B1C20;">
+<html lang="zh-Hant" style="background: #1B1C20;">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,6 +36,34 @@
   body { background: #1B1C20; }
   a { color: #F2F2F2; text-decoration: none; }
   a:hover { color: #A7A7A7; }
+  .flow-scroll { --flow-w: min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))); box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%); width: var(--flow-w); overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; cursor: grab; user-select: none; }
+  .flow-scroll img { display: block; max-width: none; height: auto; }
+  .ga-wrap { container-type: inline-size; display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px); }
+  .ga-block { box-sizing: border-box; display: flex; flex-direction: column; gap: clamp(16px, 1.25vw, 24px); padding: clamp(32px, 4.167vw, 80px) clamp(20px, 3.333vw, 64px); border-radius: clamp(12px, 1.042vw, 20px); background-color: #101010; background-image: linear-gradient(rgba(242, 242, 242, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(242, 242, 242, 0.04) 1px, transparent 1px); background-size: 24px 24px; background-size: 2.5833cqw 2.5833cqw; }
+  .ga-h { margin: 0; display: flex; align-items: baseline; gap: 0.75em; font-family: 'Noto Sans TC', sans-serif; font-weight: 200; font-size: clamp(22px, 1.667vw, 32px); line-height: 1.6875; color: var(--color-primary, #F2F2F2); }
+  .ga-num { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 0.6em; letter-spacing: 0.08em; color: var(--color-second, #A7A7A7); }
+  .ga-sub { margin: 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.042vw, 20px); line-height: 1.8; color: var(--color-primary, #F2F2F2); }
+  .ga-p { margin: 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-second, #A7A7A7); }
+  .ga-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .ga-table { width: 100%; min-width: 520px; border-collapse: collapse; border: 1px solid var(--color-third, #4A4850); text-align: left; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 1.75; color: var(--color-primary, #F2F2F2); }
+  .ga-table th { font-weight: 300; color: var(--color-second, #A7A7A7); padding: 12px 16px; border-bottom: 1px solid rgba(167, 167, 167, 0.45); vertical-align: bottom; }
+  .ga-table td { padding: 14px 16px; border-bottom: 1px solid var(--color-third, #4A4850); vertical-align: top; }
+  .ga-table td.ga-muted { color: var(--color-second, #A7A7A7); }
+  .ga-code { font-family: 'Montserrat', ui-monospace, monospace; font-size: 0.875em; padding: 0.1em 0.5em; border-radius: 4px; background: rgba(242, 242, 242, 0.08); color: var(--color-primary, #F2F2F2); white-space: nowrap; }
+  .ga-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+  .ga-step { padding: 0.4em 1.4em; border: 1px solid var(--color-third, #4A4850); border-radius: 999px; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 1.75; color: var(--color-primary, #F2F2F2); }
+  .ga-arrow { color: var(--color-second, #A7A7A7); font-family: 'Montserrat', sans-serif; }
+  .ga-scope { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 12px 16px; border-radius: 8px; background: rgba(242, 242, 242, 0.05); font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 1.75; color: var(--color-primary, #F2F2F2); }
+  .ga-dstep { display: grid; grid-template-columns: clamp(24px, 1.667vw, 32px) minmax(0, 1fr); column-gap: clamp(14px, 1.25vw, 24px); }
+  .ga-rail { display: flex; flex-direction: column; align-items: center; }
+  .ga-circle { box-sizing: border-box; flex: 0 0 auto; width: clamp(24px, 1.667vw, 32px); height: clamp(24px, 1.667vw, 32px); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-second, #A7A7A7); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: clamp(11px, 0.677vw, 13px); color: var(--color-primary, #F2F2F2); }
+  .ga-line { flex: 1 1 auto; width: 1px; margin: 8px 0; background: var(--color-third, #4A4850); }
+  .ga-step-body { display: flex; flex-direction: column; gap: 10px; padding: calc((clamp(24px, 1.667vw, 32px) - 1.8em) / 2) 0 clamp(28px, 2.5vw, 48px); }
+  .ga-dstep:last-child .ga-step-body { padding-bottom: 0; }
+  .ga-branch { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 1.9; color: var(--color-primary, #F2F2F2); }
+  .ga-branch .ga-tag { min-width: 3.2em; justify-content: center; }
+  .ga-next { color: var(--color-second, #A7A7A7); }
+  .ga-tag { display: inline-flex; align-items: center; padding: 0.15em 0.9em; border: 1px solid var(--color-third, #4A4850); border-radius: 999px; font-size: 0.875em; line-height: 1.6; color: var(--color-second, #A7A7A7); white-space: nowrap; }
 </style>
 </helmet>
 
@@ -59,40 +87,163 @@
     <dc-import name="Com_Project_Section" title="舊版痛點分析" hint-size="100%,400px">
       <div style="display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px);">
         <img src="assets/gameux_img_block2-1-1x.webp" srcset="assets/gameux_img_block2-1-1x.webp 1x, assets/gameux_img_block2-1.webp 2x" alt="Before IA — 舊版資訊架構" loading="lazy" decoding="async" width="2400" height="1522" style="display: block; width: 100%; height: auto;">
-        <div style="box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%); width: min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))); overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; cursor: grab; user-select: none;" data-drag-scroll="">
-          <img src="assets/gameux_img_block2-2-1x.webp" srcset="assets/gameux_img_block2-2-1x.webp 1x, assets/gameux_img_block2-2.webp 2x" alt="Before User Flow — HCoin 儲值" loading="lazy" decoding="async" width="2293" height="1242" draggable="false" style="display: block; width: calc(min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))) * 1.4331); max-width: none; height: auto;">
+        <div class="flow-scroll" data-drag-scroll="">
+          <img src="assets/gameux_img_block2-2-1x.webp" srcset="assets/gameux_img_block2-2-1x.webp 1x, assets/gameux_img_block2-2.webp 2x" alt="Before User Flow — HCoin 儲值" loading="lazy" decoding="async" width="2293" height="1242" draggable="false" style="width: calc(var(--flow-w) * 1.4331);">
         </div>
-        <div style="box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%); width: min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))); overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; cursor: grab; user-select: none;" data-drag-scroll="">
-          <img src="assets/gameux_img_block2-3-1x.webp" srcset="assets/gameux_img_block2-3-1x.webp 1x, assets/gameux_img_block2-3.webp 2x" alt="Before User Flow — 派對卡訂閱" loading="lazy" decoding="async" width="2328" height="1118" draggable="false" style="display: block; width: calc(min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))) * 1.455); max-width: none; height: auto;">
+        <div class="flow-scroll" data-drag-scroll="">
+          <img src="assets/gameux_img_block2-3-1x.webp" srcset="assets/gameux_img_block2-3-1x.webp 1x, assets/gameux_img_block2-3.webp 2x" alt="Before User Flow — 派對卡訂閱" loading="lazy" decoding="async" width="2328" height="1118" draggable="false" style="width: calc(var(--flow-w) * 1.455);">
         </div>
       </div>
     </dc-import>
     <dc-import name="Com_Project_Section" title="競品 / 相關資料搜集" hint-size="100%,400px">
       <div style="box-sizing: border-box; width: min(1200px, max(62.5vw, 592px), 100%); margin: 0 auto; display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px);">
-        <img src="assets/gameux_img_block3-1-1x.webp" srcset="assets/gameux_img_block3-1-1x.webp 1x, assets/gameux_img_block3-1.webp 2x" alt="What I think — 問題思考" loading="lazy" decoding="async" width="2400" height="1368" style="display: block; width: 100%; height: auto;">
+        <img src="assets/gameux_img_block3-1-1x.webp?v=2" srcset="assets/gameux_img_block3-1-1x.webp?v=2 1x, assets/gameux_img_block3-1.webp?v=2 2x" alt="What I think — 問題思考" loading="lazy" decoding="async" width="2400" height="1368" style="display: block; width: 100%; height: auto;">
         <img src="assets/gameux_img_block3-2-1x.webp" srcset="assets/gameux_img_block3-2-1x.webp 1x, assets/gameux_img_block3-2.webp 2x" alt="風格參考 — 新潮方向" loading="lazy" decoding="async" width="2400" height="1326" style="display: block; width: 100%; height: auto;">
         <img src="assets/gameux_img_block3-3-1x.webp" srcset="assets/gameux_img_block3-3-1x.webp 1x, assets/gameux_img_block3-3.webp 2x" alt="儲值中心參考 — 頁面佈局、Header、商品卡、派對卡" loading="lazy" decoding="async" width="2400" height="3124" style="display: block; width: 100%; height: auto;">
-        <img src="assets/gameux_img_block3-4-1x.webp" srcset="assets/gameux_img_block3-4-1x.webp 1x, assets/gameux_img_block3-4.webp 2x" alt="派對卡福利參考 — 訂閱福利一覽" loading="lazy" decoding="async" width="2400" height="1554" style="display: block; width: 100%; height: auto;">
+        <img src="assets/gameux_img_block3-4-1x.webp?v=2" srcset="assets/gameux_img_block3-4-1x.webp?v=2 1x, assets/gameux_img_block3-4.webp?v=2 2x" alt="派對卡訂閱獨立頁參考 — 訂閱福利一覽與訂閱選項" loading="lazy" decoding="async" width="2400" height="1554" style="display: block; width: 100%; height: auto;">
         <img src="assets/gameux_img_block3-5-1x.webp" srcset="assets/gameux_img_block3-5-1x.webp 1x, assets/gameux_img_block3-5.webp 2x" alt="已訂閱派對卡參考 — 進度條、會員狀態、資訊卡片" loading="lazy" decoding="async" width="2400" height="2582" style="display: block; width: 100%; height: auto;">
       </div>
     </dc-import>
     <dc-import name="Com_Project_Section" title="痛點與解決方向" hint-size="100%,400px">
-      <img src="assets/gameux_img_block4-1-1x.webp" srcset="assets/gameux_img_block4-1-1x.webp 1x, assets/gameux_img_block4-1.webp 2x" alt="痛點與解決方向 — P1～P8 對應解法" loading="lazy" decoding="async" width="2400" height="1616" style="display: block; width: 100%; height: auto;">
+      <div style="display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px);">
+        <img src="assets/gameux_img_block4-1-1x.webp" srcset="assets/gameux_img_block4-1-1x.webp 1x, assets/gameux_img_block4-1.webp 2x" alt="痛點與解決方向 — P1～P8 對應解法" loading="lazy" decoding="async" width="2400" height="1616" style="display: block; width: 100%; height: auto;">
+        <img src="assets/gameux_img_block4-2-1x.webp?v=2" srcset="assets/gameux_img_block4-2-1x.webp?v=2 1x, assets/gameux_img_block4-2.webp?v=2 2x" alt="設計探索與測試 — 頁面多版本提案、內部易用性測試" loading="lazy" decoding="async" width="2400" height="3430" style="display: block; width: 100%; height: auto;">
+      </div>
     </dc-import>
     <dc-import name="Com_Project_Section" title="新版設計" hint-size="100%,400px">
       <div style="display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px);">
         <img src="assets/gameux_img_block5-1-1x.webp" srcset="assets/gameux_img_block5-1-1x.webp 1x, assets/gameux_img_block5-1.webp 2x" alt="After IA — 新版資訊架構" loading="lazy" decoding="async" width="2400" height="2254" style="display: block; width: 100%; height: auto;">
-        <div style="box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%); width: min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))); overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; cursor: grab; user-select: none;" data-drag-scroll="">
-          <img src="assets/gameux_img_block5-2-1x.webp" srcset="assets/gameux_img_block5-2-1x.webp 1x, assets/gameux_img_block5-2.webp 2x" alt="After User Flow — HCoin 儲值" loading="lazy" decoding="async" width="2905" height="1242" draggable="false" style="display: block; width: calc(min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))) * 1.8156); max-width: none; height: auto;">
+        <div class="flow-scroll" data-drag-scroll="">
+          <img src="assets/gameux_img_block5-2-1x.webp" srcset="assets/gameux_img_block5-2-1x.webp 1x, assets/gameux_img_block5-2.webp 2x" alt="After User Flow — HCoin 儲值" loading="lazy" decoding="async" width="2905" height="1242" draggable="false" style="width: calc(var(--flow-w) * 1.8156);">
         </div>
-        <div style="box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%); width: min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))); overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; cursor: grab; user-select: none;" data-drag-scroll="">
-          <img src="assets/gameux_img_block5-3-1x.webp" srcset="assets/gameux_img_block5-3-1x.webp 1x, assets/gameux_img_block5-3.webp 2x" alt="After User Flow — 派對卡訂閱" loading="lazy" decoding="async" width="2831" height="1260" draggable="false" style="display: block; width: calc(min(1600px, max(83.33vw, 790px), calc(100vw - 2 * clamp(20px, 4vw, 64px))) * 1.7694); max-width: none; height: auto;">
+        <div class="flow-scroll" data-drag-scroll="">
+          <img src="assets/gameux_img_block5-3-1x.webp" srcset="assets/gameux_img_block5-3-1x.webp 1x, assets/gameux_img_block5-3.webp 2x" alt="After User Flow — 派對卡訂閱" loading="lazy" decoding="async" width="2831" height="1260" draggable="false" style="width: calc(var(--flow-w) * 1.7694);">
         </div>
-        <img src="assets/gameux_img_block5-4-1x.webp" srcset="assets/gameux_img_block5-4-1x.webp 1x, assets/gameux_img_block5-4.webp 2x" alt="After — 名詞說明、派對卡會員福利、會員等級" loading="lazy" decoding="async" width="2400" height="5974" style="display: block; width: 100%; height: auto;">
+        <img src="assets/gameux_img_block5-4-1x.webp?v=2" srcset="assets/gameux_img_block5-4-1x.webp?v=2 1x, assets/gameux_img_block5-4.webp?v=2 2x" alt="After — 名詞說明、派對卡會員福利、會員等級" loading="lazy" decoding="async" width="2400" height="5974" style="display: block; width: 100%; height: auto;">
       </div>
     </dc-import>
     <dc-import name="Com_Project_Section" title="改版成果" hint-size="100%,400px">
       <img src="assets/gameux_img_block6-1-1x.webp" srcset="assets/gameux_img_block6-1-1x.webp 1x, assets/gameux_img_block6-1.webp 2x" alt="改版成果 — 付款流程、派對卡福利提前呈現、說明頁面" loading="lazy" decoding="async" width="2400" height="1926" style="display: block; width: 100%; height: auto;">
+    </dc-import>
+    <dc-import name="Com_Project_Section" title="回顧：加入 GA 追蹤" hint-size="100%,4200px">
+      <div class="ga-wrap">
+        <p class="ga-p" style="margin-top: calc(-1 * clamp(12px, 1.042vw, 20px)); margin-bottom: clamp(16px, 1.25vw, 24px); font-size: clamp(16px, 1.042vw, 20px); line-height: 1.8; text-wrap: pretty;">離職後開始學習 GA4，重新思考改版的成效追蹤規劃，並釐清易用性測試與數據追蹤各自驗證的面向。</p>
+
+        <div class="ga-block">
+          <h3 class="ga-h"><span class="ga-num">01</span>痛點對應方式</h3>
+          <div class="ga-scroll"><table class="ga-table">
+            <thead><tr><th style="width: 32%;">痛點</th><th>主要方法</th></tr></thead>
+            <tbody>
+              <tr><td>P1 商品陳列</td><td>易用性測試 + GA</td></tr>
+              <tr><td>P2、P6 資訊理解</td><td>易用性測試 + 客服詢問量</td></tr>
+              <tr><td>P5 優惠券</td><td>易用性測試</td></tr>
+              <tr><td>P7 自動訂閱</td><td>易用性測試 + 客服與後台資料</td></tr>
+              <tr><td>P8 派對卡福利</td><td>GA 為主，測試確認看得懂</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <div class="ga-block">
+          <h3 class="ga-h"><span class="ga-num">02</span>確認 GA 要追蹤的指標</h3>
+          <p class="ga-p">使用者購買派對卡的流程：</p>
+          <div class="ga-flow" style="margin-top: calc(-1 * clamp(10px, 0.833vw, 16px));">
+            <span class="ga-step">儲值中心 (P1)</span><span class="ga-arrow" aria-hidden="true">→</span>
+            <span class="ga-step">派對卡訂閱 (P8)</span><span class="ga-arrow" aria-hidden="true">→</span>
+            <span class="ga-step">儲值流程一</span><span class="ga-arrow" aria-hidden="true">→</span>
+            <span class="ga-step">儲值流程二</span>
+          </div>
+          <div class="ga-scroll"><table class="ga-table" style="min-width: 620px; margin-top: clamp(16px, 1.667vw, 32px);">
+            <thead><tr><th style="width: 22%;">痛點</th><th style="width: 26%;">設計改動</th><th style="width: 22%;">想驗證</th><th>指標</th></tr></thead>
+            <tbody>
+              <tr><td>P1 商品陳列：派對卡和 HCoin 混在一起</td><td class="ga-muted">派對卡與 HCoin 分區，派對卡卡片放大、置頂</td><td class="ga-muted">分區後，派對卡是否更容易被注意到？</td><td>派對卡卡片點擊率 = 點擊卡片人數 ÷ 進入儲值中心人數</td></tr>
+              <tr><td>P8 派對卡福利藏在第三層</td><td class="ga-muted">卡片直接顯示福利摘要；訂閱頁列出完整福利，可當頁購買</td><td class="ga-muted">看得到福利後，是否更願意購買？</td><td>訂閱頁購買率 = 購買人數 ÷ 進入訂閱頁人數</td></tr>
+              <tr><td>整體成效（P1 + P8）</td><td class="ga-muted">—</td><td class="ga-muted">派對卡購買率有沒有上升？</td><td>派對卡購買率 = 購買人數 ÷ 進入儲值中心人數</td></tr>
+            </tbody>
+          </table></div>
+          <div class="ga-scope"><span class="ga-tag">統計對象</span><span>所有指標只計算目前未持有有效派對卡的使用者</span></div>
+        </div>
+
+        <div class="ga-block">
+          <h3 class="ga-h"><span class="ga-num">03</span>設定事件與參數</h3>
+          <p class="ga-sub">商品參數 ( item )</p>
+          <div class="ga-scroll"><table class="ga-table" style="min-width: 600px;">
+            <thead><tr><th style="width: 24%;">商品</th><th><code class="ga-code">item_id</code></th><th><code class="ga-code">item_category</code></th><th><code class="ga-code">item_variant</code></th><th><code class="ga-code">price</code></th></tr></thead>
+            <tbody>
+              <tr><td>100 HCoin</td><td><code class="ga-code">hcoin_100</code></td><td><code class="ga-code">hcoin</code></td><td class="ga-muted">—</td><td>30</td></tr>
+              <tr><td>300 HCoin</td><td><code class="ga-code">hcoin_300</code></td><td><code class="ga-code">hcoin</code></td><td class="ga-muted">—</td><td>90</td></tr>
+              <tr><td class="ga-muted">…（其他面額依此類推）</td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>派對卡（還沒選方案）</td><td><code class="ga-code">partycard</code></td><td><code class="ga-code">partycard</code></td><td class="ga-muted">—</td><td class="ga-muted">—</td></tr>
+              <tr><td>派對卡自動訂閱</td><td><code class="ga-code">partycard</code></td><td><code class="ga-code">partycard</code></td><td><code class="ga-code">auto</code></td><td>300</td></tr>
+              <tr><td>派對卡一個月</td><td><code class="ga-code">partycard</code></td><td><code class="ga-code">partycard</code></td><td><code class="ga-code">1m</code></td><td>300</td></tr>
+              <tr><td>派對卡三個月</td><td><code class="ga-code">partycard</code></td><td><code class="ga-code">partycard</code></td><td><code class="ga-code">3m</code></td><td>880</td></tr>
+            </tbody>
+          </table></div>
+
+          <p class="ga-sub" style="margin-top: clamp(24px, 2.083vw, 40px);">事件</p>
+          <div class="ga-scroll"><table class="ga-table" style="min-width: 600px;">
+            <thead><tr><th style="width: 22%;">事件</th><th style="width: 34%;">事件層參數</th><th>商品層參數 ( <code class="ga-code">items</code> )</th></tr></thead>
+            <tbody>
+              <tr><td><code class="ga-code">view_item_list</code></td><td class="ga-muted">—</td><td><code class="ga-code">item_id</code></td></tr>
+              <tr><td><code class="ga-code">select_item</code></td><td class="ga-muted">—</td><td><code class="ga-code">item_id</code>、<code class="ga-code">item_category</code></td></tr>
+              <tr><td><code class="ga-code">view_item</code></td><td class="ga-muted">—</td><td><code class="ga-code">item_id</code>、<code class="ga-code">item_category</code></td></tr>
+              <tr><td><code class="ga-code">begin_checkout</code></td><td><code class="ga-code">value</code>（原價）、<code class="ga-code">currency</code></td><td><code class="ga-code">item_id</code>、<code class="ga-code">item_category</code>、<code class="ga-code">item_variant</code>（派對卡）、<code class="ga-code">price</code>（原價）</td></tr>
+              <tr><td><code class="ga-code">purchase</code></td><td><code class="ga-code">transaction_id</code>、<code class="ga-code">value</code>（實付）、<code class="ga-code">currency</code>、<code class="ga-code">coupon</code>（有用券時）</td><td><code class="ga-code">item_id</code>、<code class="ga-code">item_category</code>、<code class="ga-code">item_variant</code>（派對卡）、<code class="ga-code">price</code>（折扣後）、<code class="ga-code">discount</code>（有折扣時）</td></tr>
+            </tbody>
+          </table></div>
+
+          <p class="ga-sub" style="margin-top: clamp(24px, 2.083vw, 40px);">使用者屬性</p>
+          <div class="ga-scroll"><table class="ga-table" style="min-width: 600px;">
+            <thead><tr><th style="width: 26%;">屬性</th><th style="width: 34%;">值</th><th>何時設定 / 更新</th></tr></thead>
+            <tbody>
+              <tr><td><code class="ga-code">partycard_status</code><span class="ga-muted" style="color: var(--color-second, #A7A7A7);">【自訂】</span></td><td><code class="ga-code">active</code>（持有中）、<code class="ga-code">expired</code>（已過期）、<code class="ga-code">never</code>（從未購買）</td><td>登入時、派對卡到期時；購買成功時要等 <code class="ga-code">purchase</code> 送出之後再更新為 <code class="ga-code">active</code></td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <div class="ga-block">
+          <h3 class="ga-h"><span class="ga-num">04</span>指標</h3>
+          <div class="ga-scroll"><table class="ga-table" style="min-width: 580px;">
+            <thead><tr><th style="width: 30%;">指標</th><th style="width: 38%;">分子</th><th>分母</th></tr></thead>
+            <tbody>
+              <tr><td>P1 派對卡卡片點擊率</td><td><code class="ga-code">select_item</code>（<code class="ga-code">item_category</code> = <code class="ga-code">partycard</code>）</td><td><code class="ga-code">view_item_list</code></td></tr>
+              <tr><td>P8 訂閱頁購買率</td><td><code class="ga-code">purchase</code>（<code class="ga-code">item_category</code> = <code class="ga-code">partycard</code>）</td><td><code class="ga-code">view_item</code>（<code class="ga-code">item_category</code> = <code class="ga-code">partycard</code>）</td></tr>
+              <tr><td>P1 + P8 派對卡購買率</td><td><code class="ga-code">purchase</code>（<code class="ga-code">item_category</code> = <code class="ga-code">partycard</code>）</td><td><code class="ga-code">view_item_list</code></td></tr>
+            </tbody>
+          </table></div>
+          <div class="ga-scope"><span class="ga-tag">篩選條件</span><span><code class="ga-code">partycard_status</code> = <code class="ga-code">never</code>、<code class="ga-code">expired</code></span></div>
+          <div class="ga-scope" style="margin-top: calc(-1 * clamp(8px, 0.625vw, 12px));"><span class="ga-tag">計算方式</span><span>以使用者數計算（同一人重複觸發只算一次）</span></div>
+        </div>
+
+        <div class="ga-block">
+          <h3 class="ga-h"><span class="ga-num">05</span>數據判讀</h3>
+          <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column;">
+            <li class="ga-dstep">
+              <div class="ga-rail" aria-hidden="true"><span class="ga-circle">1</span><span class="ga-line"></span></div>
+              <div class="ga-step-body">
+                <p class="ga-sub">派對卡購買率與改版前相比，有沒有上升？</p>
+                <div class="ga-branch"><span class="ga-tag">有</span><span>改版有效。</span></div>
+                <div class="ga-branch"><span class="ga-tag">沒有</span><span class="ga-next">往下看 ↓</span></div>
+              </div>
+            </li>
+            <li class="ga-dstep">
+              <div class="ga-rail" aria-hidden="true"><span class="ga-circle">2</span><span class="ga-line"></span></div>
+              <div class="ga-step-body">
+                <p class="ga-sub">卡片點擊率有沒有上升？</p>
+                <div class="ga-branch"><span class="ga-tag">沒有</span><span>入口問題：先用測試排除視覺問題，再檢查福利摘要是否夠吸睛。</span></div>
+                <div class="ga-branch"><span class="ga-tag">有</span><span class="ga-next">往下看 ↓</span></div>
+              </div>
+            </li>
+            <li class="ga-dstep">
+              <div class="ga-rail" aria-hidden="true"><span class="ga-circle">3</span></div>
+              <div class="ga-step-body">
+                <p class="ga-sub">點擊率有上升，購買率卻沒有 → 問題在訂閱頁</p>
+                <div class="ga-branch"><span>先用測試確認說明是否清楚，再透過訪談與企劃檢視福利和定價。</span></div>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+      </div>
     </dc-import>
   </main>
 </div>
@@ -108,20 +259,29 @@ class Component extends DCLogic {
     go();
     this._bindDrag();
   }
+  // 所有標記 data-drag-scroll 的區塊都可用滑鼠拖曳；用整頁一組監聽，增減張數不需改程式
   _bindDrag() {
-    const els = document.querySelectorAll('[data-drag-scroll]');
-    this._dragN = (this._dragN || 0) + 1;
-    if (els.length < 4 && this._dragN < 50) this._dragT = setTimeout(() => this._bindDrag(), 200);
-    els.forEach(el => {
-      if (el._drag) return; el._drag = true;
-      let down = false, x0 = 0, s0 = 0;
-      el.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; down = true; x0 = e.clientX; s0 = el.scrollLeft; el.style.cursor = 'grabbing'; el.setPointerCapture(e.pointerId); });
-      el.addEventListener('pointermove', e => { if (down) el.scrollLeft = s0 - (e.clientX - x0); });
-      const up = () => { down = false; el.style.cursor = 'grab'; };
-      el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
-    });
+    if (this._dragOn) return; this._dragOn = true;
+    let el = null, x0 = 0, s0 = 0;
+    this._dDown = (e) => {
+      if (e.pointerType !== 'mouse' || !e.target.closest) return;
+      const t = e.target.closest('[data-drag-scroll]'); if (!t) return;
+      el = t; x0 = e.clientX; s0 = t.scrollLeft; t.style.cursor = 'grabbing'; t.setPointerCapture(e.pointerId);
+    };
+    this._dMove = (e) => { if (el) el.scrollLeft = s0 - (e.clientX - x0); };
+    this._dUp = () => { if (el) { el.style.cursor = 'grab'; el = null; } };
+    document.addEventListener('pointerdown', this._dDown);
+    document.addEventListener('pointermove', this._dMove);
+    document.addEventListener('pointerup', this._dUp);
+    document.addEventListener('pointercancel', this._dUp);
   }
-  componentWillUnmount() { clearTimeout(this._fallback); clearTimeout(this._dragT); }
+  componentWillUnmount() {
+    clearTimeout(this._fallback);
+    document.removeEventListener('pointerdown', this._dDown);
+    document.removeEventListener('pointermove', this._dMove);
+    document.removeEventListener('pointerup', this._dUp);
+    document.removeEventListener('pointercancel', this._dUp);
+  }
 
   navigate(url) { window.PT ? window.PT.navigate(this, url) : (window.location.href = url); }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="background: #ebebeb;">
+<html lang="zh-Hant" style="background: #ebebeb;">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -194,7 +194,7 @@ class Component extends DCLogic {
       tagTyped: TAGLINE.slice(0, this.state.tagN || 0),
       tagStarted: !!this.state.tagStarted,
       nav: (url) => this.navigate(url),
-      goWorkfile: () => this.navigate('Page_WorkFile.dc.html'),
+      goWorkfile: () => this.navigate('WorkFile_Experience.dc.html'),
       coverOpacity: (this.state.leaving || !this.state.loaded) ? 1 : 0,
       coverPointer: (this.state.leaving || !this.state.loaded) ? 'auto' : 'none',
       closeModal: () => this.closeModal(),

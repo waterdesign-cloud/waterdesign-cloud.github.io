@@ -33,9 +33,9 @@
       const name = decodeURIComponent(url).split('/').pop();
       return name.startsWith('UIUX_') ? DARK : LIGHT;
     },
-    homeUrl() { return /github\.io$|workers\.dev$|pages\.dev$/.test(location.hostname) ? './' : 'Page_Home.dc.html'; },
+    homeUrl() { return /github\.io$|workers\.dev$|pages\.dev$/.test(location.hostname) ? './' : 'index.html'; },
     navigate(c, url) {
-      if (url === 'Page_Home.dc.html') url = this.homeUrl();
+      if (url === 'Page_Home.dc.html' || url === 'index.html') url = this.homeUrl();
       c.setState({ leaving: true, coverBg: this.bgFor(url) });
       setTimeout(() => { window.location.href = url; }, 320);
     }
