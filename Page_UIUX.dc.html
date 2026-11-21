@@ -25,6 +25,10 @@
 <link rel="prefetch" href="UIUX_04_Mega.dc.html">
 <link rel="prefetch" href="UIUX_02_B2B.dc.html">
 <link rel="prefetch" href="UIUX_03_PH_Login.dc.html">
+<link rel="prefetch" href="UIUX_08_Greon.dc.html">
+<link rel="prefetch" href="UIUX_IN_01.dc.html">
+<link rel="prefetch" href="UIUX_IN_02.dc.html">
+<link rel="prefetch" href="UIUX_IN_03.dc.html">
 <link rel="prefetch" href="assets/gameux_img_cover-1x.webp">
 <link rel="prefetch" href="assets/game_img_cover-1x.webp">
 <style id="pt-loader-css">#pt-loader{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#ebebeb;transition:opacity 450ms ease}#pt-loader.done{opacity:0;pointer-events:none}#pt-loader i{display:block;width:160px;height:1px;overflow:hidden;background:#4A485033}#pt-loader b{display:block;height:100%;background:#4A4850;transform-origin:left;transform:scaleX(0);animation:ptLoad 10s cubic-bezier(.08,.6,.2,1) forwards}#pt-loader span{font-family:'Noto Sans TC',sans-serif;font-weight:300;font-size:14px;line-height:24px;letter-spacing:0;color:#4A4850;font-variant-numeric:tabular-nums}@keyframes ptLoad{to{transform:scaleX(.92)}}@media (prefers-reduced-motion:reduce){#pt-loader b{animation-duration:.01s}}</style>
@@ -70,8 +74,11 @@
             <h1 class="h1" style="margin: 0; color: var(--color-inverted-primary, #000000);">UIUX Journey</h1>
     </div>
 
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+    <div style="display: flex; flex-direction: column; gap: clamp(12px, 1.1vw, 18px);">
+    <h2 class="h2" style="margin: 0; font-size: clamp(18px, 1.25vw, 24px); line-height: 1.6; color: var(--color-inverted-primary, #000000); animation: uxHeadIn 900ms cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: {{ g.delay }}; animation-play-state: {{ uxPlay }};">{{ g.title }}</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: clamp(14px, 1.3vw, 22px);">
-      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="7">
+      <sc-for list="{{ g.projects }}" as="p" hint-placeholder-count="4">
         <a href="{{ p.href }}" onClick="{{ p.go }}" style="display: flex; flex-direction: column; gap: 12px; padding: 10px 10px 14px; border-radius: 12px; background: var(--color-primary, #F2F2F2); color: inherit; text-decoration: none; box-shadow: 0 1px 2px rgba(40, 40, 36, 0.08); transition: translate 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 320ms ease; animation: uxCardIn 900ms cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: {{ p.delay }}; animation-play-state: {{ uxPlay }};" style-hover="translate: 0 -6px; box-shadow: 0 14px 28px rgba(40, 40, 36, 0.16);">
           <div style="position: relative; width: 100%; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 2px; background: var(--color-second, #A7A7A7); display: flex; align-items: center; justify-content: center;">
             <sc-if value="{{ p.cover }}" hint-placeholder-val="{{ false }}"><img srcset="{{ p.coverSet }}" alt="" width="1200" height="1600" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover;"></sc-if>
@@ -94,6 +101,8 @@
         </a>
       </sc-for>
     </div>
+    </div>
+    </sc-for>
   </main>
 </section>
 
@@ -119,7 +128,8 @@ class Component extends DCLogic {
     return [
       { page: 'UIUX_01_SDK_UX.dc.html', title: 'PH 遊戲內儲值 ( UX )', desc: '從使用者痛點出發，重整儲值流程與資訊架構，並以易用性測試驗證。', tags: ['app', 'ux', '資訊架構', '易用性測試', 'GA4'], cover: 'uiux_img_cardover_ux' },
       { page: 'UIUX_01_SDK_UI.dc.html', title: 'PH 遊戲內儲值 ( UI )', desc: '建立設計系統與元件規範，並強化直橫版介面的視覺層級。', tags: ['app', 'ui', 'design token', 'claude design'], cover: 'uiux_img_cardover1' },
-      { page: 'UIUX_02_B2B.dc.html', title: 'PH B2B 後臺', desc: '為 PlayHorny 合作廠商打造遊戲上架管理後台。', tags: ['dashboard', 'claude design'], cover: 'uiux_img_cardover_b2b' },
+      { page: 'UIUX_02_B2B.dc.html', title: 'PH B2B 後台', desc: '為 PlayHorny 合作廠商打造遊戲上架管理後台。', tags: ['dashboard', 'claude design'], cover: 'uiux_img_cardover_b2b' },
+      { page: 'UIUX_08_Greon.dc.html', title: 'Greon 知識沉浸型影音 App', desc: '帶領五人團隊，從 User Story 出發打造知識沉浸型影音 App。', tags: ['ux', 'leadership', 'learning project'], cover: 'uiux_img_cardover_greon' },
       { page: 'UIUX_03_PH_Login.dc.html', title: 'PH 登入註冊', desc: '優化 PH 平台活動頁登入介面。', tags: ['login/out'], cover: 'uiux_img_cardover_log' },
       { page: 'UIUX_04_Mega.dc.html', title: '莓卡遊戲 Mega Games', desc: '遊戲公司形象官方網站設計。', tags: ['visual', 'brand', 'design token'], cover: 'uiux_img_cardover_mega' },
       { page: 'UIUX_05_XXL.dc.html', title: 'XXL 猛漢町', desc: '遊戲官方網站設計。', tags: ['visual', 'campaign'], cover: 'uiux_img_cardover_xxl' },
@@ -128,21 +138,35 @@ class Component extends DCLogic {
     ];
   }
 
+  // 內部推動專案（顯示在「專案」上方）；沒有 page 的卡片不會跳頁
+  internal() {
+    return [
+      { page: 'UIUX_IN_01.dc.html', title: 'Figma Team 檔案歸納', desc: '為 Figma 雲端建立檔案分類、封面與頁面結構的共用規範。', tags: ['figma', 'guideline', 'teamwork'], cover: 'uiux_img_cardover_file' },
+      { page: 'UIUX_IN_02.dc.html', title: '導入 Design Token', desc: '建立設計與工程共用的 Design Token 規範，並從官網專案開始導入。', tags: ['design token', 'tailwind', 'handoff'], cover: 'uiux_img_cardover_token' },
+      { page: 'UIUX_IN_03.dc.html', title: '共用元件整合', desc: '盤點跨品牌的 Header、Footer，對齊各部門需求後建立共用元件。', tags: ['component', 'token', 'cross-team'], cover: 'uiux_img_cardover_com' }
+    ];
+  }
+
   renderVals() {
     const { loaded } = this.state;
-    const projects = this.projects().map((p, pos) => ({
+    let seq = 0;
+    const card = (p, pos) => ({
       title: p.title,
       desc: p.desc || '專案簡述，一到兩行說明這個專案的內容。',
       mark: String(pos + 1).padStart(2, '0'),
       tags: p.tags || [], hasTags: !!p.tags,
       cover: !!p.cover, noCover: !p.cover,
       coverSet: p.cover ? `assets/${p.cover}-1x.webp 1x, assets/${p.cover}.webp 2x` : '',
-      href: p.page,
-      go: (e) => { e.preventDefault(); this.navigate(p.page); },
-      delay: (450 + pos * 90) + 'ms'
-    }));
+      href: p.page || '#',
+      go: (e) => { e.preventDefault(); if (p.page) this.navigate(p.page); },
+      delay: (450 + (seq++) * 90) + 'ms'
+    });
+    const groups = [
+      { title: '推動團隊內部設計系統化', list: this.internal() },
+      { title: '專案', list: this.projects() }
+    ].map(g => ({ title: g.title, delay: (350 + seq * 90) + 'ms', projects: g.list.map(card) }));
     return {
-      projects,
+      groups,
       nav: (url) => this.navigate(url),
       ...(window.PT ? window.PT.cover(this, '#ebebeb') : { coverOpacity: 1, coverPointer: 'auto', leaveOpacity: 0, coverBg: '#ebebeb' }),
       uxPlay: loaded ? 'running' : 'paused'

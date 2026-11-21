@@ -59,9 +59,9 @@
       <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: clamp(14px, 1.042vw, 20px);">
         <h2 class="h2" style="font-weight: 200; margin: 0; font-size: clamp(22px, 1.667vw, 32px); line-height: 1.6875; color: var(--color-primary, #F2F2F2);">Project</h2>
         <div style="display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(18px, 1.354vw, 26px); align-items: start;">
-          <div style="display: grid; grid-template-columns: auto auto; justify-content: start; justify-items: start; align-items: center; column-gap: 8px; row-gap: 12px;">
+          <div style="display: grid; grid-template-columns: auto auto; justify-content: start; justify-items: {{ tagJustify }}; align-items: center; column-gap: 8px; row-gap: 12px;">
             <sc-for list="{{ tags }}" as="t" hint-placeholder-count="3">
-              <span class="body2" style="display: inline-flex; align-items: center; padding: 0.5em 1.8em; border: 1px solid var(--color-third, #4A4850); border-radius: 999px; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); white-space: nowrap;">{{ t }}</span>
+              <span class="body2" style="display: inline-flex; align-items: center; justify-content: {{ tagCenter }}; padding: 0.5em 1.8em; border: 1px solid var(--color-third, #4A4850); border-radius: 999px; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); white-space: nowrap;">{{ t }}</span>
             </sc-for>
           </div>
           <div style="display: flex; flex-direction: column;">
@@ -71,7 +71,7 @@
                 <span style="display: inline-flex; align-items: center; gap: 0.35em; color: var(--color-primary, #F2F2F2);"><sc-if value="{{ s.icon }}" hint-placeholder-val="{{ false }}"><img src="{{ s.icon }}" alt="" style="display: block; width: 1em; height: 1em; object-fit: contain;"></sc-if><span>{{ s.label }}</span></span>
               </sc-for>
             </div>
-            <div class="body1" style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; column-gap: 0.35em; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-second, #A7A7A7);"><span>Device /</span><span style="color: var(--color-primary, #F2F2F2);">{{ device }}</span></div>
+            <sc-if value="{{ hasDevice }}" hint-placeholder-val="{{ true }}"><div class="body1" style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; column-gap: 0.35em; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-second, #A7A7A7);"><span>Device /</span><span style="color: var(--color-primary, #F2F2F2);">{{ device }}</span></div></sc-if>
             <div class="body1" style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; column-gap: 0.35em; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-second, #A7A7A7);"><span>Date /</span><span style="color: var(--color-primary, #F2F2F2);">{{ date }}</span></div>
           </div>
         </div>
@@ -80,7 +80,7 @@
   </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1440px&quot;,&quot;height&quot;:&quot;1100px&quot;},&quot;brand&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Project&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Subtitle&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;quote&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;about&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tags&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;UI Design, UX Design&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;category&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;device&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;date&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;people&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{avatar?: string, name: string, role: string}[]&quot;},&quot;software&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{icon?: string, label: string}[]&quot;},&quot;backHref&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Page_UIUX.dc.html&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;onBack&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(e) =&gt; void&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1440px&quot;,&quot;height&quot;:&quot;1100px&quot;},&quot;brand&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Project&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Subtitle&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;quote&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;about&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tags&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;UI Design, UX Design&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;category&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;device&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;date&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;people&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{avatar?: string, name: string, role: string}[]&quot;},&quot;software&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{icon?: string, label: string}[]&quot;},&quot;tagFill&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;backHref&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Page_UIUX.dc.html&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;onBack&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(e) =&gt; void&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
@@ -103,6 +103,9 @@ class Component extends DCLogic {
       category: p.category ?? '',
       software: p.software ?? [],
       device: p.device ?? '',
+      hasDevice: !!p.device,
+      tagJustify: p.tagFill ? 'stretch' : 'start',
+      tagCenter: p.tagFill ? 'center' : 'flex-start',
       date: p.date ?? ''
     };
   }

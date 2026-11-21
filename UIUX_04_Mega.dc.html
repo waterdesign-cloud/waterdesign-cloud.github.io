@@ -17,6 +17,18 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="dark">
 <style id="preload-bg">html, body { margin: 0; background: #1B1C20; } @view-transition { navigation: auto; } ::view-transition-old(root), ::view-transition-new(root) { animation: none; }</style>
+<style id="page-css">
+  .ds-block { display: flex; flex-direction: column; gap: clamp(16px, 1.667vw, 32px); }
+  .ds-intro { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: clamp(12px, 1.25vw, 24px); row-gap: 4px; }
+  .ds-intro p { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  .rs-link { display: inline-flex; align-items: center; gap: 0.5em; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); text-decoration: none; white-space: nowrap; transition: color 240ms ease; }
+  .rs-link-text { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.3em; }
+  .rs-link-arrow { display: inline-block; transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .rs-link:hover, .rs-link:focus-visible { color: var(--color-primary, #F2F2F2); }
+  .rs-link:hover .rs-link-arrow, .rs-link:focus-visible .rs-link-arrow { transform: translate(3px, -3px); }
+  .rs-link:focus-visible { outline: 1px solid var(--color-second, #A7A7A7); outline-offset: 4px; border-radius: 2px; }
+  @media (prefers-reduced-motion: reduce) { .rs-link-arrow { transition: none; } .rs-link:hover .rs-link-arrow, .rs-link:focus-visible .rs-link-arrow { transform: none; } }
+</style>
 <style id="pt-loader-css">#pt-loader{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B1C20;transition:opacity 450ms ease}#pt-loader.done{opacity:0;pointer-events:none}#pt-loader i{display:block;width:160px;height:1px;overflow:hidden;background:#F2F2F233}#pt-loader b{display:block;height:100%;background:#F2F2F2;transform-origin:left;transform:scaleX(0);animation:ptLoad 10s cubic-bezier(.08,.6,.2,1) forwards}#pt-loader span{font-family:'Noto Sans TC',sans-serif;font-weight:300;font-size:14px;line-height:24px;letter-spacing:0;color:#F2F2F2;font-variant-numeric:tabular-nums}@keyframes ptLoad{to{transform:scaleX(.92)}}@media (prefers-reduced-motion:reduce){#pt-loader b{animation-duration:.01s}}</style>
 <script id="pt-loader-js">(function(){var raf,ready=false,last=performance.now(),t0=performance.now();try{new PerformanceObserver(function(l){if(l.getEntries().length)last=performance.now()}).observe({type:'resource',buffered:true})}catch(e){}function pct(b){var m=getComputedStyle(b).transform;var a=m&&m!=='none'?parseFloat(m.split('(')[1]):0;return Math.round(a*100)}function idle(){return ready&&document.readyState==='complete'&&(!document.fonts||document.fonts.status==='loaded')&&performance.now()-last>700}function tick(){var el=document.getElementById('pt-loader');if(!el){if(!window.__ptDone)raf=requestAnimationFrame(tick);return}var b=el.querySelector('b'),n=el.querySelector('span');if(b&&n)n.textContent=pct(b)+'%';if(idle()||performance.now()-t0>20000){finish();return}raf=requestAnimationFrame(tick)}raf=requestAnimationFrame(tick);setTimeout(function(){finish()},20000);function finish(){if(window.__ptDone)return;window.__ptDone=true;cancelAnimationFrame(raf);var el=document.getElementById('pt-loader');if(!el){run();return}var b=el.querySelector('b'),n=el.querySelector('span');var t=getComputedStyle(b).transform;b.style.animation='none';b.style.transform=t;b.offsetWidth;b.style.transition='transform 260ms ease';b.style.transform='scaleX(1)';setTimeout(function(){if(n)n.textContent='100%';el.classList.add('done');run()},280);setTimeout(function(){el.remove()},800)}var cbs=[];function run(){var l=cbs;cbs=[];l.forEach(function(f){try{f()}catch(e){}})}window.__ptFinish=function(cb){ready=true;if(cb)cbs.push(cb);if(window.__ptDone&&!document.getElementById('pt-loader'))run()};window.addEventListener('pageshow',function(e){if(e.persisted)finish()})})();</script>
 <script src="./support.js"></script>
@@ -65,7 +77,14 @@
 
 
     <dc-import name="Com_Project_Section" title="Design System" hint-size="100%,400px">
-      <img src="assets/mega_img_designtoken-1x.webp" srcset="assets/mega_img_designtoken-1x.webp 1x, assets/mega_img_designtoken.webp 2x" alt="Design System — Design Token 層級：Global、Semantic、Component" loading="lazy" decoding="async" width="2400" height="1952" style="display: block; width: 100%; height: auto;">
+      <div class="ds-block">
+        <div class="ds-intro">
+          <p>為了讓官網的視覺規格與前端一致，我以 Design Token 建立設計系統，分為 Global、Semantic、Component 三層；此專案也是團隊首次導入，驗證可行後推廣至後續專案。</p>
+          <a class="rs-link" href="UIUX_IN_02.dc.html" onClick="{{ goToken }}"><span class="rs-link-text">延伸閱讀：導入 Design Token</span><span class="rs-link-arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <img src="assets/mega_img_designtoken1-1x.webp" srcset="assets/mega_img_designtoken1-1x.webp 1x, assets/mega_img_designtoken1.webp 2x" alt="三層 Token 逐層引用：Global 定義色票，Semantic 賦予用途，Component 對應元件狀態" loading="lazy" decoding="async" width="2400" height="1428" style="display: block; width: 100%; height: auto;">
+        <img src="assets/mega_img_designtoken2-1x.webp" srcset="assets/mega_img_designtoken2-1x.webp 1x, assets/mega_img_designtoken2.webp 2x" alt="實際應用：以按鈕為例，邊框、文字與 hover 底色皆由色碼經 Global、Semantic、Component 逐層引用而來" loading="lazy" decoding="async" width="2400" height="2084" style="display: block; width: 100%; height: auto;">
+      </div>
     </dc-import>
 
     <dc-import name="Com_Project_Section" title="Official" hint-size="100%,400px">
@@ -99,6 +118,7 @@ class Component extends DCLogic {
         { icon: 'assets/uiux_icon_figma.webp', label: 'Figma' }
       ],
       goBack: () => this.navigate('Page_UIUX.dc.html'),
+      goToken: (e) => { if (e && e.preventDefault) e.preventDefault(); this.navigate('UIUX_IN_02.dc.html'); },
       nav: (url) => this.navigate(url),
       ...(window.PT ? window.PT.cover(this) : { coverOpacity: 1, coverPointer: 'auto', leaveOpacity: 0, coverBg: '#1B1C20' })
     };

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PH B2B 後臺｜RLZ's Portfolio</title>
+<title>PH B2B 後台｜RLZ's Portfolio</title>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RLZ's Portfolio">
-<meta property="og:title" content="PH B2B 後臺｜RLZ's Portfolio">
+<meta property="og:title" content="PH B2B 後台｜RLZ's Portfolio">
 <meta property="og:image" content="https://portfolio.rlzdesign.workers.dev/assets/og_cover.jpg">
 <meta property="og:url" content="https://portfolio.rlzdesign.workers.dev/UIUX_02_B2B.dc.html">
 <meta property="og:image:width" content="1200">
@@ -36,6 +36,60 @@
   body { background: #1B1C20; }
   a { color: #F2F2F2; text-decoration: none; }
   a:hover { color: #A7A7A7; }
+  .ds-surface { border-radius: clamp(12px, 1.042vw, 20px); background-color: #101010; background-image: linear-gradient(rgba(242, 242, 242, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(242, 242, 242, 0.04) 1px, transparent 1px); background-size: 24px 24px; background-size: 2.5833cqw 2.5833cqw; box-shadow: inset 0 0 0 1px rgba(242, 242, 242, 0.06), inset 0 0 clamp(10px, 1.25vw, 24px) rgba(242, 242, 242, 0.15); }
+  p.sec-cap { margin: calc(-1 * clamp(12px, 1.042vw, 20px)) 0 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.042vw, 20px); line-height: 1.8; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  .ba-label { margin: 0; color: var(--color-third); font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; }
+  .ba-knob { outline: none; }
+  .ba-knob:focus-visible { outline: 2px solid #F2F2F2; outline-offset: 3px; }
+  .bn-list { margin: clamp(16px, 2.192cqw, 32px) 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+  .bn-step { display: grid; grid-template-columns: clamp(20px, 2.192cqw, 32px) minmax(0, 1fr); column-gap: clamp(10px, 1.644cqw, 24px); }
+  .bn-rail { display: flex; flex-direction: column; align-items: center; }
+  .bn-circle { box-sizing: border-box; flex: 0 0 auto; width: clamp(20px, 2.192cqw, 32px); height: clamp(20px, 2.192cqw, 32px); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-second, #A7A7A7); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: clamp(10px, 0.89cqw, 13px); color: var(--color-primary, #F2F2F2); }
+  .bn-line { flex: 1 1 auto; width: 1px; margin: 8px 0; background: var(--color-third, #4A4850); }
+  .bn-body { display: flex; flex-direction: column; gap: clamp(4px, 0.411cqw, 6px); padding-bottom: clamp(20px, 2.74cqw, 40px); min-width: 0; }
+  .bn-step:last-child .bn-body { padding-bottom: 0; }
+  .bn-title { margin: 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(14px, 1.37cqw, 20px); line-height: 1.6; color: var(--color-primary, #F2F2F2); }
+  .bn-desc { margin: 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(12px, 1.096cqw, 16px); line-height: 1.9; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  .bn-split { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: clamp(12px, 2.192cqw, 32px) clamp(16px, 3.288cqw, 48px); }
+  .bn-text { min-width: 0; display: flex; flex-direction: column; gap: clamp(4px, 0.411cqw, 6px); }
+  .bn-demo { display: flex; align-items: flex-start; gap: 1.1em; font-family: 'Noto Sans TC', sans-serif; font-size: clamp(7px, 0.822cqw, 12px); line-height: 1.5; color: #F2F2F2; }
+  .bn-stack { display: flex; flex-direction: column; gap: 1.4em; }
+  .bn-col { display: flex; flex-direction: column; gap: 0.6em; }
+  .bn-btn { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.45em; height: 2.45em; padding: 0 0.9em; box-sizing: border-box; border: 1px solid #45444B; border-radius: 0.65em; background: #2A2A2E; color: #F2F2F2; white-space: nowrap; }
+  .bn-btn svg { width: 1.1em; height: 1.1em; flex: 0 0 auto; }
+  .bn-pop { box-sizing: border-box; width: 17em; border: 1px solid #3A393F; border-radius: 1em; background: #1C1C1F; box-shadow: 0 0.7em 1.7em rgba(0, 0, 0, 0.35); overflow: hidden; }
+  .bn-pop-in { padding: 1.15em; display: flex; flex-direction: column; gap: 0.7em; }
+  .bn-label { font-size: 0.93em; color: #9A99A0; }
+  .bn-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; font-size: 0.86em; }
+  .bn-input { display: flex; align-items: center; justify-content: space-between; height: 2.7em; padding: 0 0.8em; margin-top: 0.35em; border: 1px solid #3A393F; border-radius: 0.65em; background: #26262A; color: #C9C8CE; }
+  .bn-input svg { width: 1.1em; height: 1.1em; }
+  .bn-seg { display: grid; grid-template-columns: 1fr 1fr; padding: 0.22em; border-radius: 0.65em; background: #2A2A2E; }
+  .bn-seg span { padding: 0.45em 0; text-align: center; border-radius: 0.5em; color: #8E8D94; }
+  .bn-seg span.is-on { background: #151517; color: #F2F2F2; }
+  .bn-opt { display: flex; align-items: center; justify-content: space-between; padding: 0.3em; color: #F2F2F2; }
+  .bn-opt.is-off { color: #8E8D94; }
+  .bn-foot { display: flex; justify-content: space-between; padding: 0.85em 1.15em; border-top: 1px solid #333238; }
+  .bn-ghost { display: inline-flex; align-items: center; height: 2.3em; padding: 0 1em; border: 1px solid #45444B; border-radius: 0.6em; color: #F2F2F2; }
+  .bn-primary { display: inline-flex; align-items: center; height: 2.3em; padding: 0 1.15em; border-radius: 0.6em; background: #7B4FE6; color: #FFFFFF; }
+  .bn-pair { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(8px, 1.096cqw, 16px); margin-top: clamp(8px, 0.822cqw, 12px); }
+  .bn-fig { margin: 0; min-width: 0; display: flex; flex-direction: column; gap: clamp(4px, 0.548cqw, 8px); }
+  .bn-fig figcaption { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: clamp(10px, 0.822cqw, 12px); letter-spacing: 0.04em; color: var(--color-second, #A7A7A7); }
+  .bn-fig img { display: block; width: 100%; height: auto; }
+  @container (max-width: 640px) {
+    .bn-split { grid-template-columns: minmax(0, 1fr); }
+    .bn-pair { grid-template-columns: minmax(0, 1fr); }
+    .bn-demo { flex-wrap: wrap; }
+  }
+  .fp-wrap { container-type: inline-size; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: clamp(8px, 0.833vw, 16px); }
+  .fp-card { box-sizing: border-box; display: flex; flex-direction: column; gap: clamp(16px, 1.25vw, 24px); padding: clamp(32px, 3.333vw, 64px) clamp(28px, 4.167vw, 80px); }
+  .fp-h { margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: clamp(22px, 1.667vw, 32px); line-height: 1.6875; letter-spacing: 0.02em; color: var(--color-primary, #F2F2F2); }
+  .fp-list { position: relative; margin: 0; padding-left: 26px; display: flex; flex-direction: column; gap: clamp(10px, 0.833vw, 16px); }
+  .fp-row { position: relative; display: grid; grid-template-columns: 6.5em minmax(0, 1fr); column-gap: clamp(12px, 1.042vw, 20px); font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 1.75; }
+  .fp-row::before { content: ""; position: absolute; left: -18px; top: 0.875em; width: 12px; border-top: 1px solid var(--color-third, #4A4850); }
+  .fp-row::after { content: ""; position: absolute; left: -18px; top: calc(-1 * clamp(10px, 0.833vw, 16px)); bottom: 0; border-left: 1px solid var(--color-third, #4A4850); }
+  .fp-row:last-child::after { bottom: auto; height: calc(0.875em + clamp(10px, 0.833vw, 16px)); }
+  .fp-row dt { color: var(--color-primary, #F2F2F2); }
+  .fp-row dd { margin: 0; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
 </style>
 </helmet>
 
@@ -50,34 +104,67 @@
 
   <main style="box-sizing: border-box; width: 100%; max-width: calc(min(1460px, max(76.04vw, 720px)) + 2 * clamp(20px, 4vw, 64px)); margin: 0 auto; padding: 0 clamp(20px, 4vw, 64px) clamp(200px, 18vh, 300px); display: flex; flex-direction: column;">
 
-    <dc-import name="Com_Project_Head" brand="PlayHorny" subtitle="B2B 後臺" quote="讓合作廠商透過官方提供的帳號登入後台，自行管理遊戲內容與公告資訊，完成資料填寫後送出審核。透過標準化的上架流程，降低營運人員的人工處理成本，並提升內容管理效率。" about="PlayHorny 平台提供遊戲下載、點數儲值、派對卡（會員）訂閱、商城及遊戲宣傳活動等完整的遊戲服務。
+    <dc-import name="Com_Project_Head" brand="PlayHorny" subtitle="B2B 後台" quote="讓合作廠商透過官方提供的帳號登入後台，自行管理遊戲內容與公告資訊，完成資料填寫後送出審核。透過標準化的上架流程，降低營運人員的人工處理成本，並提升內容管理效率。" about="PlayHorny 平台提供遊戲下載、點數儲值、派對卡（會員）訂閱、商城及遊戲宣傳活動等完整的遊戲服務。
 本專案聚焦於 PlayHorny 合作廠商的遊戲上架管理，協助廠商完成遊戲資料、素材與審核流程。" tags="UI Design, Design System, UX Design, shadcn ui" category="B2B Dashboard" device="Desktop" date="2026" people="{{ people }}" software="{{ software }}" on-back="{{ goBack }}" hint-size="100%,1100px"></dc-import>
 
     <dc-import name="Com_Project_Section" title="Problem &amp; Solution" first="true" hint-size="100%,400px">
-      <img src="assets/b2b_img_block1-1x.webp" srcset="assets/b2b_img_block1-1x.webp 1x, assets/b2b_img_block1.webp 2x" alt="Problem & Solution — Before / After 遊戲上架流程" loading="lazy" decoding="async" width="2400" height="1208" style="display: block; width: 100%; height: auto;">
-    </dc-import>
-
-    <dc-import name="Com_Project_Section" title="User Flow" hint-size="100%,400px">
-      <img src="assets/b2b_img_block3-1x.webp" srcset="assets/b2b_img_block3-1x.webp 1x, assets/b2b_img_block3.webp 2x" alt="User Flow — Vendor 與 Official 流程" loading="lazy" decoding="async" width="2400" height="1120" style="display: block; width: 100%; height: auto;">
+      <img src="assets/b2b_img_block1-1x.webp?v=2" srcset="assets/b2b_img_block1-1x.webp?v=2 1x, assets/b2b_img_block1.webp?v=2 2x" alt="Problem & Solution — Before / After 遊戲上架流程" loading="lazy" decoding="async" width="2400" height="1208" style="display: block; width: 100%; height: auto;">
     </dc-import>
 
     <dc-import name="Com_Project_Section" title="AI Collaboration" hint-size="100%,400px">
-      <img src="assets/b2b_img_block2-1x.webp" srcset="assets/b2b_img_block2-1x.webp 1x, assets/b2b_img_block2.webp 2x" alt="AI Collaboration — 企劃需求、UX / UI Optimization、Design System" loading="lazy" decoding="async" width="2400" height="1180" style="display: block; width: 100%; height: auto;">
+      <p class="body1 sec-cap">後台系統以操作需求與製作效率為優先，視覺美感放在第二順位。因此團隊決定全流程使用 Claude Design，並套用開源設計系統 shadcn/ui。</p>
+      <img src="assets/b2b_img_block2-1x.webp?v=3" srcset="assets/b2b_img_block2-1x.webp?v=3 1x, assets/b2b_img_block2.webp?v=3 2x" alt="AI Collaboration — 企劃需求、設計接收釐清需求（UIUX、Design System）" loading="lazy" decoding="async" width="2400" height="1280" style="display: block; width: 100%; height: auto;">
     </dc-import>
 
+    <dc-import name="Com_Project_Section" title="使用者需求" hint-size="100%,700px">
+      <div class="fp-wrap">
+      <div class="fp-card ds-surface">
+        <h3 class="fp-h">Vendor</h3>
+        <dl class="fp-list">
+          <div class="fp-row"><dt>帳號</dt><dd>登入、個人資料</dd></div>
+          <div class="fp-row"><dt>遊戲上架送審</dt><dd>遊戲列表（依狀態篩選）、建立／編輯遊戲、上傳素材、送出審核</dd></div>
+          <div class="fp-row"><dt>遊戲情報送審</dt><dd>情報列表（依狀態篩選）、建立／編輯情報、上傳素材、送出審核</dd></div>
+          <div class="fp-row"><dt>審核狀態</dt><dd>查看進度、查看退回原因</dd></div>
+        </dl>
+      </div>
+      <div class="fp-card ds-surface">
+        <h3 class="fp-h">Official</h3>
+        <dl class="fp-list">
+          <div class="fp-row"><dt>帳號</dt><dd>登入</dd></div>
+          <div class="fp-row"><dt>廠商管理</dt><dd>建立廠商帳號、權限設定</dd></div>
+          <div class="fp-row"><dt>遊戲上架管理</dt><dd>遊戲列表（依狀態篩選）、審核內容、核准並排定上架日期、退回（填寫原因）、下架</dd></div>
+          <div class="fp-row"><dt>遊戲情報管理</dt><dd>情報列表（依狀態篩選）、審核內容、核准並排定上架日期、退回（填寫原因）、下架</dd></div>
+        </dl>
+      </div>
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="Functional Map" hint-size="100%,400px">
+      <p class="body1 sec-cap">以目標、功能、資訊為三個節點來進行發想。</p>
+      <img src="assets/b2b_img_block5-1x.webp?v=2" srcset="assets/b2b_img_block5-1x.webp?v=2 1x, assets/b2b_img_block5.webp?v=2 2x" alt="Functional Map — Vendor 目標、功能與資訊" loading="lazy" decoding="async" width="2400" height="2884" style="display: block; width: 100%; height: auto;">
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="IA" hint-size="100%,400px">
+      <img src="assets/b2b_img_block6-1x.webp?v=2" srcset="assets/b2b_img_block6-1x.webp?v=2 1x, assets/b2b_img_block6.webp?v=2 2x" alt="IA — Vendor 與 Official 後台資訊架構" loading="lazy" decoding="async" width="2400" height="2628" style="display: block; width: 100%; height: auto;">
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="User Flow" hint-size="100%,400px">
+      <img src="assets/b2b_img_block3-1x.webp?v=2" srcset="assets/b2b_img_block3-1x.webp?v=2 1x, assets/b2b_img_block3.webp?v=2 2x" alt="User Flow — Vendor 上架新遊戲送出審核、Official 審核上架新遊戲" loading="lazy" decoding="async" width="2400" height="2566" style="display: block; width: 100%; height: auto;">
+    </dc-import>
 
     <dc-import name="Com_Project_Section" title="UIUX" hint-size="100%,400px">
-      <div style="display: flex; flex-direction: column; gap: clamp(24px, 2.083vw, 40px);">
-      <div style="width: 100%; box-sizing: border-box; padding: 13% 10.6% 15%; display: flex; flex-direction: column; gap: clamp(64px, 6.25vw, 120px); background-color: var(--color-inverted-primary, #000000); background-image: linear-gradient(to right, color-mix(in srgb, var(--color-inverted-second, #424242) 35%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--color-inverted-second, #424242) 35%, transparent) 1px, transparent 1px); background-size: clamp(16px, 1.615vw, 31px) clamp(16px, 1.615vw, 31px); background-position: -1px -1px; border: 2px solid color-mix(in srgb, var(--color-inverted-second, #424242) 60%, transparent); box-shadow: inset 0 0 clamp(10px, 0.938vw, 18px) color-mix(in srgb, var(--color-inverted-second, #424242) 45%, transparent); border-radius: clamp(4px, 0.417vw, 8px); overflow: hidden;">
+      <div style="container-type: inline-size; display: flex; flex-direction: column; gap: clamp(24px, 2.083vw, 40px);">
+      <div style="width: 100%; display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px);">
       <sc-for list="{{ baBlocks }}" as="b" hint-placeholder-count="2">
-      <div style="display: flex; flex-direction: column; gap: clamp(12px, 1.25vw, 24px);">
-      <div class="h2" style="margin: 0; color: var(--color-second); font-size: clamp(20px, 1.667vw, 32px); line-height: 1.6875;">{{ b.title }}</div>
+      <div class="ds-surface" style="width: 100%; box-sizing: border-box; padding: 9% 10.6% 10%; display: flex; flex-direction: column; gap: clamp(12px, 1.25vw, 24px); overflow: hidden;">
+      <sc-if value="{{ b.hasRole }}" hint-placeholder-val="{{ false }}"><h3 class="fp-h">{{ b.role }}</h3></sc-if>
+      <div class="h2" style="margin: 0; color: var(--color-second); font-size: clamp(16px, 1.042vw, 20px); line-height: 1.8;">{{ b.title }}</div>
       <div style="display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px);">
       <div style="display: flex; justify-content: space-between; gap: 16px;">
-        <div class="body2" style="margin: 0; color: var(--color-third); font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714;">BEFORE · 企劃規劃</div>
-        <div class="body2" style="margin: 0; color: var(--color-third); font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714;">AFTER · 設計整理</div>
+        <div class="body2 ba-label">BEFORE · 企劃需求</div>
+        <div class="body2 ba-label">AFTER · 設計介面架構調整</div>
       </div>
-      <div ref="{{ b.boxRef }}" onPointerDown="{{ b.down }}" onPointerMove="{{ b.move }}" onPointerUp="{{ b.up }}" onPointerCancel="{{ b.up }}" onKeyDown="{{ b.key }}" tabindex="0" role="slider" aria-label="Before / After" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ b.pos }}" style="position: relative; width: 100%; aspect-ratio: {{ b.ratio }}; overflow: hidden; border: 1px solid var(--color-inverted-second); box-sizing: border-box; border-radius: clamp(6px, 0.729vw, 14px); cursor: ew-resize; touch-action: pan-y; user-select: none; outline: none;">
+      <div ref="{{ b.boxRef }}" onPointerDown="{{ b.down }}" onPointerMove="{{ b.move }}" onPointerUp="{{ b.up }}" onPointerCancel="{{ b.up }}" style="position: relative; width: 100%; aspect-ratio: {{ b.ratio }}; overflow: hidden; border: 1px solid var(--color-inverted-second); box-sizing: border-box; border-radius: clamp(6px, 0.729vw, 14px); cursor: ew-resize; touch-action: pan-y; user-select: none;">
         <div style="position: absolute; inset: 0; ">
           <div style="position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; background-image: {{ b.beforeBg }};"></div>
           <sc-for list="{{ b.beforeBtns }}" as="z" hint-placeholder-count="0">
@@ -91,12 +178,130 @@
           </sc-for>
         </div>
         <div ref="{{ b.lineRef }}" style="position: absolute; top: 0; bottom: 0; left: {{ b.left }}; width: 2px; margin-left: -1px; background: var(--color-primary); pointer-events: none;">
-          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: clamp(40px, 2.5vw, 48px); height: clamp(40px, 2.5vw, 48px); border-radius: 50%; background: var(--color-primary); color: var(--color-third); display: flex; align-items: center; justify-content: center; gap: 6px; font-family: 'Noto Sans TC', sans-serif; font-size: 16px; line-height: 1; box-shadow: 0 2px 12px rgba(0,0,0,0.35);"><span>‹</span><span>›</span></div>
+          <div class="ba-knob" onKeyDown="{{ b.key }}" tabindex="0" role="slider" aria-label="{{ b.title }}：修改前後對照" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ b.pos }}" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: clamp(40px, 2.5vw, 48px); height: clamp(40px, 2.5vw, 48px); border-radius: 50%; background: var(--color-primary); color: var(--color-third); display: flex; align-items: center; justify-content: center; gap: 6px; font-family: 'Noto Sans TC', sans-serif; font-size: 16px; line-height: 1; box-shadow: 0 2px 12px rgba(0,0,0,0.35);"><span>‹</span><span>›</span></div>
         </div>
       </div>
       </div>
+      <sc-if value="{{ b.hasNotes }}" hint-placeholder-val="{{ false }}">
+      <ol class="bn-list">
+        <li class="bn-step">
+          <div class="bn-rail" aria-hidden="true"><span class="bn-circle">1</span><span class="bn-line"></span></div>
+          <div class="bn-body bn-split">
+            <div class="bn-text">
+              <p class="bn-title">篩選精簡化，移到資料面板上方</p>
+              <p class="bn-desc">將原本位於頁面上方的篩選欄位精簡化，依功能分到資料面板上方左右兩側，並依篩選形式設計對應的操作介面，讓下方資料欄位有更多顯示空間。</p>
+            </div>
+            <div class="bn-demo" role="img" aria-label="篩選、排序、欄位三種操作介面示意">
+              <div class="bn-stack">
+              <div class="bn-col">
+                  <span class="bn-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><polygon points="3 4 21 4 14 12.5 14 19 10 21 10 12.5 3 4"></polygon></svg>篩選</span>
+                <div class="bn-pop">
+                  <div class="bn-pop-in">
+                    <span class="bn-label">送審日期</span>
+                    <div class="bn-dates">
+                      <span>From<span class="bn-input">年 / 月 / 日<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line></svg></span></span>
+                      <span>To<span class="bn-input">年 / 月 / 日<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line></svg></span></span>
+                    </div>
+                  </div>
+                  <div class="bn-foot"><span class="bn-ghost">重置</span><span class="bn-primary">套用</span></div>
+                </div>
+              </div>
+              <div class="bn-col">
+                  <span class="bn-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="7" y1="12" x2="17" y2="12"></line><line x1="10" y1="17" x2="14" y2="17"></line></svg>排序 ↓</span>
+                <div class="bn-pop">
+                  <div class="bn-pop-in">
+                    <span class="bn-label">排序欄位</span>
+                    <div class="bn-seg"><span class="is-on">送審時間</span><span>建立時間</span></div>
+                    <div class="bn-opt"><span>↓ 新到舊</span><span aria-hidden="true">✓</span></div>
+                    <div class="bn-opt is-off"><span>↑ 舊到新</span></div>
+                  </div>
+                  <div class="bn-foot"><span class="bn-ghost">重置</span><span class="bn-primary">套用</span></div>
+                </div>
+              </div>
+              </div>
+              <div class="bn-col">
+                  <span class="bn-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="5" width="4" height="14" rx="1"></rect><rect x="10" y="5" width="4" height="14" rx="1"></rect><rect x="16" y="5" width="4" height="14" rx="1"></rect></svg>欄位</span>
+                <div class="bn-pop">
+                  <div class="bn-pop-in">
+                    <span class="bn-label">顯示欄位</span>
+                    <div class="bn-opt"><span>審核狀態</span><span aria-hidden="true">✓</span></div>
+                    <div class="bn-opt"><span>情報名稱</span><span aria-hidden="true">✓</span></div>
+                    <div class="bn-opt"><span>情報標題</span><span aria-hidden="true">✓</span></div>
+                    <div class="bn-opt"><span>廠商名稱</span><span aria-hidden="true">✓</span></div>
+                    <div class="bn-opt"><span>遊戲</span><span aria-hidden="true">✓</span></div>
+                    <div class="bn-opt"><span>頁面語系</span><span aria-hidden="true">✓</span></div>
+                    <div class="bn-opt"><span>上架設定</span><span aria-hidden="true">✓</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="bn-step">
+          <div class="bn-rail" aria-hidden="true"><span class="bn-circle">2</span><span class="bn-line"></span></div>
+          <div class="bn-body">
+            <p class="bn-title">每列操作改為 icon</p>
+            <p class="bn-desc">將每列的操作按鈕改為 icon，節省欄位空間，讓表格更容易掃讀。</p>
+          </div>
+        </li>
+        <li class="bn-step">
+          <div class="bn-rail" aria-hidden="true"><span class="bn-circle">3</span><span class="bn-line"></span></div>
+          <div class="bn-body">
+            <p class="bn-title">廠商資料移到左下方</p>
+            <p class="bn-desc">將廠商資料移到左下方，讓畫面主要區域留給遊戲資料與操作。</p>
+          </div>
+        </li>
+        <li class="bn-step">
+          <div class="bn-rail" aria-hidden="true"><span class="bn-circle">4</span></div>
+          <div class="bn-body">
+            <p class="bn-title">頁碼依使用需求設計</p>
+            <p class="bn-desc">將最常用的上一頁／下一頁放在右側，其餘頁碼功能放在左側，避免右側功能過於集中。</p>
+          </div>
+        </li>
+      </ol>
+      </sc-if>
       <sc-if value="{{ b.steps }}" hint-placeholder-val="{{ false }}">
         <div class="body2" style="margin: 0; color: var(--color-second); font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; text-align: center;">※ 點選上一步、下一步進行頁面切換</div>
+      </sc-if>
+      <sc-if value="{{ b.hasNotes2 }}" hint-placeholder-val="{{ false }}">
+      <ol class="bn-list">
+        <li class="bn-step">
+          <div class="bn-rail" aria-hidden="true"><span class="bn-circle">1</span><span class="bn-line"></span></div>
+          <div class="bn-body">
+            <p class="bn-title">整體：版面層級重新整理</p>
+            <p class="bn-desc">原有分頁呈現步驟式流程，與實際「可任意順序填寫」的操作情境不符。調整分頁樣式後，並重新整理了元件層級，強化各區塊之間的從屬關係。</p>
+          </div>
+        </li>
+        <li class="bn-step">
+          <div class="bn-rail" aria-hidden="true"><span class="bn-circle">2</span><span class="bn-line"></span></div>
+          <div class="bn-body">
+            <p class="bn-title">遊戲介紹分頁：多語系介紹改為側邊欄切換</p>
+            <p class="bn-desc">原設計中，每新增一個語系就會在下方疊加一張超過螢幕高度的卡片，語系一多就得大量捲動才能找到要填的內容。改版後以側邊欄集中列出所有語系，透過點選切換填寫區，同時清楚標示各語系的完成狀態。</p>
+          </div>
+        </li>
+        <li class="bn-step">
+          <div class="bn-rail" aria-hidden="true"><span class="bn-circle">3</span><span class="bn-line"></span></div>
+          <div class="bn-body">
+            <p class="bn-title">社群連結分頁：社群連結改為直接填寫</p>
+            <p class="bn-desc">原本需先點選社群標籤新增欄位，才能填寫連結。修改後直接列出所有社群欄位，填入網址即代表有該社群，減少一次操作。</p>
+            <div class="bn-pair">
+              <figure class="bn-fig"><figcaption>BEFORE</figcaption><img src="assets/b2b_img_note3_before-1x.webp" srcset="assets/b2b_img_note3_before-1x.webp 1x, assets/b2b_img_note3_before.webp 2x" alt="修改前：點選社群標籤後才出現填寫欄位" loading="lazy" decoding="async" width="1200" height="681"></figure>
+              <figure class="bn-fig"><figcaption>AFTER</figcaption><img src="assets/b2b_img_note3_after-1x.webp" srcset="assets/b2b_img_note3_after-1x.webp 1x, assets/b2b_img_note3_after.webp 2x" alt="修改後：側邊欄切換語系，直接列出所有社群欄位" loading="lazy" decoding="async" width="1200" height="428"></figure>
+            </div>
+          </div>
+        </li>
+        <li class="bn-step">
+          <div class="bn-rail" aria-hidden="true"><span class="bn-circle">4</span></div>
+          <div class="bn-body">
+            <p class="bn-title">遊戲發布分頁：遊戲檔案改為直接上傳</p>
+            <p class="bn-desc">原本需先選擇遊玩平台展開上傳區域，修改後直接列出各平台的上傳區，上傳檔案即代表支援該平台。</p>
+            <div class="bn-pair">
+              <figure class="bn-fig"><figcaption>BEFORE</figcaption><img src="assets/b2b_img_note4_before-1x.webp" srcset="assets/b2b_img_note4_before-1x.webp 1x, assets/b2b_img_note4_before.webp 2x" alt="修改前：先選擇遊玩平台才展開上傳區" loading="lazy" decoding="async" width="1200" height="736"></figure>
+              <figure class="bn-fig"><figcaption>AFTER</figcaption><img src="assets/b2b_img_note4_after-1x.webp" srcset="assets/b2b_img_note4_after-1x.webp 1x, assets/b2b_img_note4_after.webp 2x" alt="修改後：直接列出 Android、iOS、PC、網頁四個上傳區" loading="lazy" decoding="async" width="1200" height="521"></figure>
+            </div>
+          </div>
+        </li>
+      </ol>
       </sc-if>
       </div>
       </sc-for>
@@ -158,7 +363,7 @@ class Component extends DCLogic {
     this._baPos = p;
     if (refs.clip.current) refs.clip.current.style.clipPath = `inset(0 0 0 ${p}%)`;
     if (refs.line.current) refs.line.current.style.left = p + '%';
-    e.currentTarget.setAttribute('aria-valuenow', Math.round(p));
+    refs.line.current?.firstElementChild?.setAttribute('aria-valuenow', Math.round(p));
   }
 
   renderVals() {
@@ -174,8 +379,8 @@ class Component extends DCLogic {
       goBack: () => this.navigate('Page_UIUX.dc.html'),
       nav: (url) => this.navigate(url),
       baBlocks: [
-        { id: 1, title: '後台主頁', ratio: '2400 / 1214' },
-        { id: 2, title: '新增遊戲資料', ratio: '2400 / 1302', steps: [2, 3, 4, 5, 6] }
+        { id: 1, title: '後台主頁', ratio: '2400 / 1214', role: 'Vendor', hasRole: true, hasNotes: true },
+        { id: 2, title: '新增遊戲資料', ratio: '2400 / 1302', role: 'Vendor', hasRole: true, hasNotes2: true, steps: [2, 3, 4, 5, 6] }
       ].map(b => {
         const pos = (this.state.ba || {})[b.id] ?? 50;
         const img = b.steps ? b.steps[(this.state.baStep || {})[b.id] ?? 0] : b.id;
@@ -200,7 +405,7 @@ class Component extends DCLogic {
             this.setState(s => ({ ba: { ...(s.ba || {}), [b.id]: p } }));
           },
           key: (e) => {
-            const d = e.key === 'ArrowLeft' ? -5 : e.key === 'ArrowRight' ? 5 : 0;
+            const d = e.key === 'ArrowLeft' ? -5 : e.key === 'ArrowRight' ? 5 : e.key === 'Home' ? -100 : e.key === 'End' ? 100 : 0;
             if (d) { e.preventDefault(); this.setState(s => ({ ba: { ...(s.ba || {}), [b.id]: Math.max(0, Math.min(100, ((s.ba || {})[b.id] ?? 50) + d)) } })); }
           }
         };

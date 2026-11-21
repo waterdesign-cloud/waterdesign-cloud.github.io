@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" style="background: #1B1C20;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greon 知識沉浸型影音 App｜RLZ's Portfolio</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RLZ's Portfolio">
+<meta property="og:title" content="Greon 知識沉浸型影音 App｜RLZ's Portfolio">
+<meta property="og:image" content="https://portfolio.rlzdesign.workers.dev/assets/og_cover.jpg">
+<meta property="og:url" content="https://portfolio.rlzdesign.workers.dev/UIUX_08_Greon.dc.html">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<style id="preload-bg">html, body { margin: 0; background: #1B1C20; } @view-transition { navigation: auto; } ::view-transition-old(root), ::view-transition-new(root) { animation: none; }</style>
+<style id="pt-loader-css">#pt-loader{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B1C20;transition:opacity 450ms ease}#pt-loader.done{opacity:0;pointer-events:none}#pt-loader i{display:block;width:160px;height:1px;overflow:hidden;background:#F2F2F233}#pt-loader b{display:block;height:100%;background:#F2F2F2;transform-origin:left;transform:scaleX(0);animation:ptLoad 10s cubic-bezier(.08,.6,.2,1) forwards}#pt-loader span{font-family:'Noto Sans TC',sans-serif;font-weight:300;font-size:14px;line-height:24px;letter-spacing:0;color:#F2F2F2;font-variant-numeric:tabular-nums}@keyframes ptLoad{to{transform:scaleX(.92)}}@media (prefers-reduced-motion:reduce){#pt-loader b{animation-duration:.01s}}</style>
+<script id="pt-loader-js">(function(){var raf,ready=false,last=performance.now(),t0=performance.now();try{new PerformanceObserver(function(l){if(l.getEntries().length)last=performance.now()}).observe({type:'resource',buffered:true})}catch(e){}function pct(b){var m=getComputedStyle(b).transform;var a=m&&m!=='none'?parseFloat(m.split('(')[1]):0;return Math.round(a*100)}function idle(){return ready&&document.readyState==='complete'&&(!document.fonts||document.fonts.status==='loaded')&&performance.now()-last>700}function tick(){var el=document.getElementById('pt-loader');if(!el){if(!window.__ptDone)raf=requestAnimationFrame(tick);return}var b=el.querySelector('b'),n=el.querySelector('span');if(b&&n)n.textContent=pct(b)+'%';if(idle()||performance.now()-t0>20000){finish();return}raf=requestAnimationFrame(tick)}raf=requestAnimationFrame(tick);setTimeout(function(){finish()},20000);function finish(){if(window.__ptDone)return;window.__ptDone=true;cancelAnimationFrame(raf);var el=document.getElementById('pt-loader');if(!el){run();return}var b=el.querySelector('b'),n=el.querySelector('span');var t=getComputedStyle(b).transform;b.style.animation='none';b.style.transform=t;b.offsetWidth;b.style.transition='transform 260ms ease';b.style.transform='scaleX(1)';setTimeout(function(){if(n)n.textContent='100%';el.classList.add('done');run()},280);setTimeout(function(){el.remove()},800)}var cbs=[];function run(){var l=cbs;cbs=[];l.forEach(function(f){try{f()}catch(e){}})}window.__ptFinish=function(cb){ready=true;if(cb)cbs.push(cb);if(window.__ptDone&&!document.getElementById('pt-loader'))run()};window.addEventListener('pageshow',function(e){if(e.persisted)finish()})})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<div id="pt-loader" aria-hidden="true"><i><b></b></i><span>0%</span></div>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&amp;family=Noto+Sans+TC:wght@200;300;400&amp;display=swap">
+<link rel="stylesheet" href="_ds/portfolio-design-system-03ed5cab-7880-4aa2-b819-a2eaba3528c8/tokens/tokens.css">
+<script src="_ds/portfolio-design-system-03ed5cab-7880-4aa2-b819-a2eaba3528c8/_ds_bundle.js"></script>
+<script src="page-transition.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { background: #1B1C20; }
+  a { color: #F2F2F2; text-decoration: none; }
+  a:hover { color: #A7A7A7; }
+  .ds-surface { border-radius: clamp(12px, 1.042vw, 20px); background-color: #101010; background-image: linear-gradient(rgba(242, 242, 242, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(242, 242, 242, 0.04) 1px, transparent 1px); background-size: 24px 24px; background-size: 2.5833cqw 2.5833cqw; box-shadow: inset 0 0 0 1px rgba(242, 242, 242, 0.06), inset 0 0 clamp(10px, 1.25vw, 24px) rgba(242, 242, 242, 0.15); }
+  p.sec-cap { margin: calc(-1 * clamp(12px, 1.042vw, 20px)) 0 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.042vw, 20px); line-height: 1.8; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  .bn-img { display: block; width: 100%; height: auto; margin-top: clamp(8px, 0.822cqw, 12px); border-radius: clamp(6px, 0.548cqw, 8px); }
+  .pv-card { box-sizing: border-box; container-type: inline-size; display: flex; flex-direction: column; gap: clamp(24px, 2.5vw, 48px); padding: clamp(28px, 3.333vw, 64px) clamp(28px, 4.167vw, 80px); }
+  .pv-rows { margin: 0; display: flex; flex-direction: column; gap: clamp(6px, 0.625vw, 12px); }
+  .pv-row { display: grid; grid-template-columns: 4em minmax(0, 1fr); column-gap: clamp(12px, 1.042vw, 20px); font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.042vw, 20px); line-height: 1.8; }
+  .pv-row dt { color: var(--color-primary, #F2F2F2); }
+  .pv-row dd { margin: 0; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  .pv-text { margin: 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.042vw, 20px); line-height: 1.8; color: var(--color-primary, #F2F2F2); text-wrap: pretty; }
+  .pp-wrap { width: 80%; margin-inline: auto; display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px); }
+  @container (max-width: 640px) { .pp-wrap { width: 100%; } }
+  .rf-block { display: flex; flex-direction: column; gap: clamp(12px, 1.25vw, 24px); }
+  .rf-h { margin: 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.042vw, 20px); line-height: 1.8; color: var(--color-primary, #F2F2F2); }
+  .rf-grid { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(8px, 0.833vw, 16px); }
+  .rf-tile { box-sizing: border-box; display: flex; flex-direction: column; gap: clamp(6px, 0.625vw, 12px); padding: clamp(18px, 1.667vw, 32px); border-radius: clamp(8px, 0.625vw, 12px); background: rgba(242, 242, 242, 0.04); box-shadow: inset 0 0 0 1px rgba(242, 242, 242, 0.08); }
+  .rf-no { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); letter-spacing: 0.04em; color: var(--color-second, #A7A7A7); }
+  .rf-t { margin: 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.042vw, 20px); line-height: 1.6; color: var(--color-primary, #F2F2F2); }
+  .rf-d { margin: 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  @container (max-width: 640px) { .rf-grid { grid-template-columns: minmax(0, 1fr); } }
+  .sl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(8px, 0.833vw, 16px); }
+  @container (max-width: 640px) { .sl-grid { grid-template-columns: minmax(0, 1fr); } }
+  .sl-stack { display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px); }
+  .sl-img { display: block; width: 100%; height: auto; border-radius: clamp(8px, 0.833vw, 16px); }
+  .ux-wrap { container-type: inline-size; }
+  .ux-card { box-sizing: border-box; padding: clamp(32px, 6.849cqw, 100px) clamp(24px, 8.219cqw, 120px); }
+  .bn-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+  .bn-step { display: grid; grid-template-columns: clamp(24px, 2.192cqw, 32px) minmax(0, 1fr); column-gap: clamp(12px, 1.644cqw, 24px); }
+  .bn-rail { display: flex; flex-direction: column; align-items: center; }
+  .bn-circle { box-sizing: border-box; flex: 0 0 auto; width: clamp(24px, 2.192cqw, 32px); height: clamp(24px, 2.192cqw, 32px); display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-second, #A7A7A7); border-radius: 50%; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: clamp(11px, 0.89cqw, 13px); color: var(--color-primary, #F2F2F2); }
+  .bn-line { flex: 1 1 auto; width: 1px; margin: 8px 0; background: var(--color-third, #4A4850); }
+  .bn-body { display: flex; flex-direction: column; gap: clamp(4px, 0.411cqw, 6px); padding-bottom: clamp(28px, 3.425cqw, 50px); min-width: 0; }
+  .bn-step:last-child .bn-body { padding-bottom: 0; }
+  .bn-title { margin: 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(16px, 1.37cqw, 20px); line-height: 1.6; color: var(--color-primary, #F2F2F2); }
+  .bn-desc { margin: 0; font-family: 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+</style>
+</helmet>
+
+<div style="position: fixed; inset: 0; z-index: 100; background: #1B1C20; opacity: {{ coverOpacity }}; pointer-events: {{ coverPointer }}; transition: opacity 420ms ease-out;"></div>
+<div aria-hidden="true" style="position: fixed; inset: 0; z-index: 101; pointer-events: none; background: {{ coverBg }}; opacity: {{ leaveOpacity }}; transition: opacity 300ms ease-out;"></div>
+
+<div style="background: #1B1C20; color: var(--color-primary, #F2F2F2);">
+
+  <dc-import name="Com_Project_Hero" src="assets/greon_img_cover.webp?v=2" src1x="assets/greon_img_cover-1x.webp?v=2" alt="Greon 主視覺" hint-size="100%,500px">
+    <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 70;"><dc-import name="Com_Nav" current="" tone="dark" on-navigate="{{ nav }}" hint-size="100%,108px"></dc-import></div>
+  </dc-import>
+
+  <main style="box-sizing: border-box; width: 100%; max-width: calc(min(1460px, max(76.04vw, 720px)) + 2 * clamp(20px, 4vw, 64px)); margin: 0 auto; padding: 0 clamp(20px, 4vw, 64px) clamp(200px, 18vh, 300px); display: flex; flex-direction: column;">
+
+    <dc-import name="Com_Project_Head" brand="Greon" subtitle="知識沉浸型影音 App" quote="帶領背景多元的五人團隊，從官方 User Story 出發，共同打造一款知識沉浸型影音 App。" about="在學習計畫中，與背景多元、彼此不熟悉的成員模擬開發一款影音 App，官方提供初步的 User Story 作為起點。我擔任組長，統籌前期 UX 探索、於 UI 階段提供設計建議，並負責最終簡報統整與錄音。" tags="UX Design, Leadership, User Story" category="Learning Project" device="Mobile" date="2025" people="{{ people }}" software="{{ software }}" on-back="{{ goBack }}" hint-size="100%,1100px"></dc-import>
+
+    <dc-import name="Com_Project_Section" title="UX Exploration" first="true" hint-size="100%,900px">
+      <p class="body1 sec-cap">成員對產品開發流程的熟悉程度不一，我先研究常見的 UX 方法，整理成循序漸進的步驟並為每一步準備範例，讓每個人都能跟著參與。</p>
+      <div class="ux-wrap">
+      <div class="ds-surface ux-card">
+        <ol class="bn-list">
+          <li class="bn-step">
+            <div class="bn-rail" aria-hidden="true"><span class="bn-circle">1</span><span class="bn-line"></span></div>
+            <div class="bn-body">
+              <p class="bn-title">產品方向研究</p>
+              <p class="bn-desc">比較五種影音平台類型的內容風格、觀眾行為與商業模式，團隊最初選定劇集／電影型（娛樂沉浸型）作為產品方向。</p>
+              <img class="bn-img" width="2170" height="1266" src="assets/greon_img_step1-1x.webp" srcset="assets/greon_img_step1-1x.webp 1x, assets/greon_img_step1.webp 2x" alt="五種影音平台類型分析：劇集／電影型、動漫專屬平台、紀錄片／專題訪談型、演算法娛樂型、生活紀錄／社群分享型，各自的內容風格、觀眾行為、用戶輪廓與商業模式" loading="lazy" decoding="async">
+            </div>
+          </li>
+          <li class="bn-step">
+            <div class="bn-rail" aria-hidden="true"><span class="bn-circle">2</span><span class="bn-line"></span></div>
+            <div class="bn-body">
+              <p class="bn-title">使用者情境卡</p>
+              <p class="bn-desc">從官方 User Story 出發，以角色、時間點、裝置、任務與痛點補完使用者輪廓，讓大家先聚焦在「人」與「生活場景」，而非功能。每位成員各寫一張，作為後續的發想基礎。</p>
+              <img class="bn-img" width="2150" height="1242" src="assets/greon_img_step2-1x.webp" srcset="assets/greon_img_step2-1x.webp 1x, assets/greon_img_step2.webp 2x" alt="使用者情境卡：範例卡 User #0 與四位成員各自填寫的情境卡，包含角色、時間點、裝置、任務與痛點" loading="lazy" decoding="async">
+            </div>
+          </li>
+          <li class="bn-step">
+            <div class="bn-rail" aria-hidden="true"><span class="bn-circle">3</span><span class="bn-line"></span></div>
+            <div class="bn-body">
+              <p class="bn-title">User Story Map</p>
+              <p class="bn-desc">分兩步進行：先以動詞寫下使用者的任務階段，再為每個階段補上 1～2 個具體的功能點。其中「睡眠時間提醒」的想法，後來成為核心功能之一。</p>
+              <img class="bn-img" width="2152" height="1180" src="assets/greon_img_step3-1-1x.webp" srcset="assets/greon_img_step3-1-1x.webp 1x, assets/greon_img_step3-1.webp 2x" alt="User Story Map 做法說明與範例：STEP 1 任務階段拆解、STEP 2 對應功能點，以範例情境卡示範" loading="lazy" decoding="async">
+              <img class="bn-img" width="1904" height="1168" src="assets/greon_img_step3-2-1x.webp" srcset="assets/greon_img_step3-2-1x.webp 1x, assets/greon_img_step3-2.webp 2x" alt="成員依自己的情境卡完成的 User Story Map：五個任務階段與對應功能點" loading="lazy" decoding="async">
+            </div>
+          </li>
+          <li class="bn-step">
+            <div class="bn-rail" aria-hidden="true"><span class="bn-circle">4</span><span class="bn-line"></span></div>
+            <div class="bn-body">
+              <p class="bn-title">功能盤點與分工</p>
+              <p class="bn-desc">將 User Story Map 的功能點依頁面（首頁、播放頁、資訊頁、我的清單）歸類，每人負責一頁補齊功能，再以投票標出優先功能、刪去非必要項目。</p>
+              <img class="bn-img" width="1594" height="1300" src="assets/greon_img_step4-1x.webp" srcset="assets/greon_img_step4-1x.webp 1x, assets/greon_img_step4.webp 2x" alt="功能盤點與分工：首頁、播放頁、影片互動與資訊頁、個人清單四個頁面的功能列表，各由一位成員負責" loading="lazy" decoding="async">
+            </div>
+          </li>
+          <li class="bn-step">
+            <div class="bn-rail" aria-hidden="true"><span class="bn-circle">5</span></div>
+            <div class="bn-body">
+              <p class="bn-title">Flow Chart</p>
+              <p class="bn-desc">規劃沉浸式觀影與收藏影片兩條核心流程，涵蓋首次使用教學、睡眠時間提醒，以及非 VIP 用戶收藏整季時的升級引導。</p>
+              <img class="bn-img" width="2302" height="1258" src="assets/greon_img_step5-1x.webp" srcset="assets/greon_img_step5-1x.webp 1x, assets/greon_img_step5.webp 2x" alt="Flow Chart：沉浸式觀影流程（首次使用教學、鎖定畫面、雙擊收藏時刻、睡眠時間提醒）與收藏影片流程（單支或整季收藏、非 VIP 引導升級）" loading="lazy" decoding="async">
+            </div>
+          </li>
+        </ol>
+      </div>
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="方向調整" hint-size="100%,400px">
+      <div class="ds-surface pv-card">
+        <dl class="pv-rows">
+          <div class="pv-row"><dt>導師回饋</dt><dd>沉浸體驗具發展潛力，但產品缺乏特色，難以與現有平台區隔。</dd></div>
+          <div class="pv-row"><dt>團隊檢視</dt><dd>重新檢視市場分析後，發現「沉浸式知識平台」仍是市場空缺。</dd></div>
+          <div class="pv-row"><dt>團隊調整</dt><dd>保留沉浸體驗並結合知識內容，將 Greon 定位為「探索 × 知識 × 沉浸體驗」的影音平台。</dd></div>
+        </dl>
+        <div class="sl-stack">
+        <img class="sl-img" width="1640" height="910" src="assets/greon_img_slide4-1x.webp" srcset="assets/greon_img_slide4-1x.webp 1x, assets/greon_img_slide4.webp 2x" alt="競品分析：以技術沉浸程度與內容類型分為四象限，Greon 位於「沉浸式知識平台」" loading="lazy" decoding="async">
+        <img class="sl-img" width="1516" height="848" src="assets/greon_img_slide1-1x.webp" srcset="assets/greon_img_slide1-1x.webp 1x, assets/greon_img_slide1.webp 2x" alt="GREON 的獨特定位：專業 Authority、啟發 Inspiration、沉浸 Immersion，目標是提供高品質、知識驅動的影音內容" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="UI 階段支援" hint-size="100%,400px">
+      <div class="ds-surface pv-card">
+        <p class="pv-text">UI 由成員依頁面分工製作，我轉為支援成員。<br>在每次檢視時提供設計建議，並肯定大家的進度，讓團隊保持投入。</p>
+        <img class="sl-img" width="1358" height="1404" src="assets/greon_img_ui-1x.webp" srcset="assets/greon_img_ui-1x.webp 1x, assets/greon_img_ui.webp 2x" alt="UI 階段成果：首頁、播放頁、影片資訊頁、個人收藏頁的介面與流程，各頁附上設計重點標註" loading="lazy" decoding="async">
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="成果提交" hint-size="100%,400px">
+      <div class="ds-surface pv-card">
+        <p class="pv-text">在團隊製作 UI 畫面時，同時間我將團隊成果統整，並補上市場背景、產品定位與平台策略，讓提案脈絡更清楚。</p>
+        <div class="pp-wrap">
+        <img class="sl-img" width="1920" height="1080" src="assets/greon_img_pp_cover-1x.webp" srcset="assets/greon_img_pp_cover-1x.webp 1x, assets/greon_img_pp_cover.webp 2x" alt="Greon 提案簡報封面：探索 × 知識 × 沉浸體驗" loading="lazy" decoding="async">
+        <div class="sl-grid">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp1a.webp" alt="市場背景：在娛樂導向平台中，打造知識沉浸的差異化影音品牌" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp1b.webp" alt="GREON 的獨特定位：專業、啟發、沉浸" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp2a.webp" alt="使用者研究：沉浸型內容使用者 Persona" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp2b.webp" alt="使用者旅程圖：打開 App、首頁選擇影片、開始播放、前往收藏頁面" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp3a.webp" alt="功能模組地圖" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp3b.webp" alt="平台策略：聚焦 iOS 的移動端策略" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp4a.webp" alt="競品分析" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp4b.webp" alt="Greon 命名概念：簡潔、沉浸、啟動感" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp5a.webp" alt="Design System：配色與字體" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp5b.webp" alt="核心功能：專注知識策展內容" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp6a.webp" alt="核心功能：沉浸體驗－快速探索" loading="lazy" decoding="async">
+          <img class="sl-img" width="964" height="542" src="assets/greon_img_pp6b.webp" alt="核心功能：沉浸體驗－播放頁沉浸介面" loading="lazy" decoding="async">
+        </div>
+        </div>
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="反思" hint-size="100%,400px">
+      <div class="ds-surface pv-card">
+        <p class="pv-text">這次的成員背景都不一樣，對開發流程的熟悉度也不同，期中還因為產品不夠有特色而轉了方向。回頭看，最後的成果在 UX 的論述上還是不夠完整。</p>
+        <div class="rf-block">
+          <h3 class="rf-h">我學到的事</h3>
+          <ol class="rf-grid">
+            <li class="rf-tile"><span class="rf-no">01</span><p class="rf-t">組長要先穩住</p><p class="rf-d">這次擔任組長，我發現這個角色最需要的是「穩」。當大家沒有方向時，要能站出來帶大家往前走，這份心理準備要先做好。</p></li>
+            <li class="rf-tile"><span class="rf-no">02</span><p class="rf-t">先想清楚差異化</p><p class="rf-d">先做競品分析、確定定位，再開始想功能，就不用做到一半才轉向。</p></li>
+            <li class="rf-tile"><span class="rf-no">03</span><p class="rf-t">檢查要更早</p><p class="rf-d">我們其實有回頭檢查，但時間點太晚，等到期中回饋才發現問題。下次會在每個階段結束前就先確認產出。</p></li>
+          </ol>
+        </div>
+      </div>
+    </dc-import>
+
+  </main>
+</div>
+
+<dc-import name="Com_ToTop" tone="dark" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { leaving: false, loaded: false };
+
+  componentDidMount() {
+    const go = () => window.PT ? window.PT.mount(this, { fallback: 4000, hero: true }) : setTimeout(go, 16);
+    go();
+  }
+  componentWillUnmount() { clearTimeout(this._fallback); }
+
+  navigate(url) { window.PT ? window.PT.navigate(this, url) : (window.location.href = url); }
+
+  renderVals() {
+    return {
+      people: [
+        { avatar: 'assets/uiux_img_user2.webp', name: 'Ruby', role: 'Team Lead (Me)' }
+      ],
+      software: [
+        { icon: 'assets/uiux_icon_figma.webp', label: 'Figma' }
+      ],
+      goBack: () => this.navigate('Page_UIUX.dc.html'),
+      nav: (url) => this.navigate(url),
+      ...(window.PT ? window.PT.cover(this) : { coverOpacity: 1, coverPointer: 'auto', leaveOpacity: 0, coverBg: '#1B1C20' })
+    };
+  }
+}
+</script>
+</body>
+</html>

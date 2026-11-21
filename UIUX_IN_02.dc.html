@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" style="background: #1B1C20;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>導入 Design Token｜RLZ's Portfolio</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RLZ's Portfolio">
+<meta property="og:title" content="導入 Design Token｜RLZ's Portfolio">
+<meta property="og:image" content="https://portfolio.rlzdesign.workers.dev/assets/og_cover.jpg">
+<meta property="og:url" content="https://portfolio.rlzdesign.workers.dev/UIUX_IN_02.dc.html">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<style id="preload-bg">html, body { margin: 0; background: #1B1C20; } @view-transition { navigation: auto; } ::view-transition-old(root), ::view-transition-new(root) { animation: none; }</style>
+<style id="page-css">
+  .ds-surface { box-sizing: border-box; border-radius: clamp(12px, 1.042vw, 20px); background-color: #101010; background-image: linear-gradient(rgba(242, 242, 242, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(242, 242, 242, 0.04) 1px, transparent 1px); background-size: 24px 24px; background-size: 2.5833cqw 2.5833cqw; box-shadow: inset 0 0 0 1px rgba(242, 242, 242, 0.06), inset 0 0 clamp(10px, 1.25vw, 24px) rgba(242, 242, 242, 0.15); }
+  .pb-wrap { container-type: inline-size; }
+  .pb-card { display: flex; flex-direction: column; gap: clamp(24px, 3.014cqw, 48px); padding: clamp(40px, 6.849cqw, 100px) clamp(32px, 8.219cqw, 120px); }
+  .pb-text { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-primary, #F2F2F2); text-wrap: pretty; }
+  .pb-lead { font-size: var(--lead, clamp(22px, 1.667vw, 32px)); line-height: 1.6875; letter-spacing: 0.02em; text-align: center; }
+  .rs-quote { --lead: clamp(18px, 1.25vw, 24px); --q: clamp(22px, 1.667vw, 32px); display: grid; grid-template-columns: auto minmax(0, max-content) auto; justify-content: center; align-items: stretch; column-gap: clamp(10px, 1.37cqw, 20px); padding: clamp(20px, 3.425cqw, 50px) 0; }
+  .rs-q { align-self: start; font-family: 'Montserrat', serif; font-weight: 300; font-size: calc(var(--q) * 2.2); transform: translateY(calc((var(--q) - var(--lead)) * 0.84)); line-height: calc(var(--lead) * 1.6875); height: calc(var(--lead) * 1.6875); color: var(--color-second, #A7A7A7); }
+  .rs-q-close { align-self: end; }
+  .rs-group .pc-h { font-size: clamp(18px, 1.25vw, 24px); }
+  .pc-stack { display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px); }
+  .pc-h { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(22px, 1.667vw, 32px); line-height: 1.6875; letter-spacing: 0.02em; color: var(--color-primary, #F2F2F2); }
+  .pc-h + .pc-rules { margin-top: calc(-1 * clamp(14px, 2.055cqw, 30px)); }
+  .pc-rules { margin: 0; display: flex; flex-direction: column; gap: clamp(4px, 0.411cqw, 8px); }
+  .pc-rule { display: grid; grid-template-columns: 3em minmax(0, 1fr); column-gap: clamp(12px, 1.042vw, 20px); font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; }
+  .pc-rule dt { color: var(--color-primary, #F2F2F2); }
+  .pc-rule dd { margin: 0; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  .pb-fig { display: block; width: 80%; height: auto; margin: 0 auto; }
+  .pc-figs { display: flex; flex-direction: column; gap: clamp(8px, 0.822cqw, 12px); }
+  .pc-pair { display: grid; grid-template-columns: minmax(0, 0.7743fr) minmax(0, 0.7795fr); align-items: start; gap: clamp(16px, 2.192cqw, 32px); }
+  @container (max-width: 640px) { .pc-pair { grid-template-columns: minmax(0, 1fr); } }
+  .pc-shot { display: block; width: 100%; height: auto; border-radius: clamp(6px, 0.548cqw, 8px); }
+  .pc-list { margin: 0; padding-left: 1.2em; list-style: disc; }
+  .pc-list li::marker { color: var(--color-third, #4A4850); }
+  .rs-head { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: clamp(12px, 1.25vw, 24px); row-gap: 4px; }
+  .rs-link { display: inline-flex; align-items: center; gap: 0.5em; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); text-decoration: none; transition: color 240ms ease; }
+  .rs-link-text { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.3em; }
+  .rs-link-arrow { display: inline-block; transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .rs-link:hover, .rs-link:focus-visible { color: var(--color-primary, #F2F2F2); }
+  .rs-link:hover .rs-link-arrow, .rs-link:focus-visible .rs-link-arrow { transform: translate(3px, -3px); }
+  .rs-link:focus-visible { outline: 1px solid var(--color-second, #A7A7A7); outline-offset: 4px; border-radius: 2px; }
+  @media (prefers-reduced-motion: reduce) { .rs-link-arrow { transition: none; } .rs-link:hover .rs-link-arrow, .rs-link:focus-visible .rs-link-arrow { transform: none; } }
+  .rs-pair { display: grid; grid-template-columns: minmax(0, 1.1713fr) minmax(0, 1.3821fr); align-items: start; gap: clamp(12px, 1.37cqw, 20px); }
+  @container (max-width: 640px) { .rs-pair { grid-template-columns: minmax(0, 1fr); } }
+  .rs-stack { display: flex; flex-direction: column; gap: clamp(28px, 3.425cqw, 50px); }
+  .rs-group { display: flex; flex-direction: column; gap: clamp(12px, 1.37cqw, 20px); }
+</style>
+<style id="pt-loader-css">#pt-loader{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B1C20;transition:opacity 450ms ease}#pt-loader.done{opacity:0;pointer-events:none}#pt-loader i{display:block;width:160px;height:1px;overflow:hidden;background:#F2F2F233}#pt-loader b{display:block;height:100%;background:#F2F2F2;transform-origin:left;transform:scaleX(0);animation:ptLoad 10s cubic-bezier(.08,.6,.2,1) forwards}#pt-loader span{font-family:'Noto Sans TC',sans-serif;font-weight:300;font-size:14px;line-height:24px;letter-spacing:0;color:#F2F2F2;font-variant-numeric:tabular-nums}@keyframes ptLoad{to{transform:scaleX(.92)}}@media (prefers-reduced-motion:reduce){#pt-loader b{animation-duration:.01s}}</style>
+<script id="pt-loader-js">(function(){var raf,ready=false,last=performance.now(),t0=performance.now();try{new PerformanceObserver(function(l){if(l.getEntries().length)last=performance.now()}).observe({type:'resource',buffered:true})}catch(e){}function pct(b){var m=getComputedStyle(b).transform;var a=m&&m!=='none'?parseFloat(m.split('(')[1]):0;return Math.round(a*100)}function idle(){return ready&&document.readyState==='complete'&&(!document.fonts||document.fonts.status==='loaded')&&performance.now()-last>700}function tick(){var el=document.getElementById('pt-loader');if(!el){if(!window.__ptDone)raf=requestAnimationFrame(tick);return}var b=el.querySelector('b'),n=el.querySelector('span');if(b&&n)n.textContent=pct(b)+'%';if(idle()||performance.now()-t0>20000){finish();return}raf=requestAnimationFrame(tick)}raf=requestAnimationFrame(tick);setTimeout(function(){finish()},20000);function finish(){if(window.__ptDone)return;window.__ptDone=true;cancelAnimationFrame(raf);var el=document.getElementById('pt-loader');if(!el){run();return}var b=el.querySelector('b'),n=el.querySelector('span');var t=getComputedStyle(b).transform;b.style.animation='none';b.style.transform=t;b.offsetWidth;b.style.transition='transform 260ms ease';b.style.transform='scaleX(1)';setTimeout(function(){if(n)n.textContent='100%';el.classList.add('done');run()},280);setTimeout(function(){el.remove()},800)}var cbs=[];function run(){var l=cbs;cbs=[];l.forEach(function(f){try{f()}catch(e){}})}window.__ptFinish=function(cb){ready=true;if(cb)cbs.push(cb);if(window.__ptDone&&!document.getElementById('pt-loader'))run()};window.addEventListener('pageshow',function(e){if(e.persisted)finish()})})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<div id="pt-loader" aria-hidden="true"><i><b></b></i><span>0%</span></div>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&amp;family=Noto+Sans+TC:wght@200;300;400&amp;display=swap">
+<link rel="stylesheet" href="_ds/portfolio-design-system-03ed5cab-7880-4aa2-b819-a2eaba3528c8/tokens/tokens.css">
+<script src="_ds/portfolio-design-system-03ed5cab-7880-4aa2-b819-a2eaba3528c8/_ds_bundle.js"></script>
+<script src="page-transition.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { background: #1B1C20; }
+  a { color: #F2F2F2; text-decoration: none; }
+  a:hover { color: #A7A7A7; }
+</style>
+</helmet>
+
+<div style="position: fixed; inset: 0; z-index: 100; background: #1B1C20; opacity: {{ coverOpacity }}; pointer-events: {{ coverPointer }}; transition: opacity 420ms ease-out;"></div>
+<div aria-hidden="true" style="position: fixed; inset: 0; z-index: 101; pointer-events: none; background: {{ coverBg }}; opacity: {{ leaveOpacity }}; transition: opacity 300ms ease-out;"></div>
+
+<div style="background: #1B1C20; color: var(--color-primary, #F2F2F2);">
+
+  <dc-import name="Com_Project_Hero" src="assets/in02_img_cover.webp?v=3" src1x="assets/in02_img_cover-1x.webp?v=3" alt="導入 Design Token 主視覺" hint-size="100%,500px">
+    <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 70;"><dc-import name="Com_Nav" current="" tone="dark" on-navigate="{{ nav }}" hint-size="100%,108px"></dc-import></div>
+  </dc-import>
+
+  <main style="box-sizing: border-box; width: 100%; max-width: calc(min(1460px, max(76.04vw, 720px)) + 2 * clamp(20px, 4vw, 64px)); margin: 0 auto; padding: 0 clamp(20px, 4vw, 64px) clamp(200px, 18vh, 300px); display: flex; flex-direction: column;">
+
+    <dc-import name="Com_Project_Head" brand="團隊內部推動" subtitle="導入 Design Token" quote="將設計規範轉換為 Design Token，建立設計師之間、設計與工程之間的共同語言。" about="為了讓設計與工程能用同一套規則溝通，我主動提出 Design Token 規範，並與前端確認 Tailwind 的對應方式，推動團隊在專案中採用。" tags="Design Token, Tailwind, Handoff" tag-fill="true" category="Internal" date="2024~2025" people="{{ people }}" software="{{ software }}" on-back="{{ goBack }}" hint-size="100%,1100px"></dc-import>
+
+    <dc-import name="Com_Project_Section" title="Problem" first="true" hint-size="100%,400px">
+      <div class="pb-wrap">
+        <div class="ds-surface pb-card">
+          <div class="rs-quote">
+            <span class="rs-q" aria-hidden="true">“</span>
+            <p class="pb-text pb-lead">原本的設計規範以色碼與簡短文字記錄，定義模糊：<br>設計師之間各自解讀，設計與工程之間缺乏共同命名，溝通容易產生落差。</p>
+            <span class="rs-q rs-q-close" aria-hidden="true">”</span>
+          </div>
+          <img class="pb-fig" width="1392" height="1269" src="assets/in02_img_problem.webp?v=3" srcset="assets/in02_img_problem-1x.webp?v=3 1x, assets/in02_img_problem.webp?v=3 2x" alt="原本的設計規範：色碼、文字規格、動態、陰影、透明度等規格表" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="Solution" hint-size="100%,400px">
+      <div class="pb-wrap">
+        <div class="pc-stack">
+          <div class="ds-surface pb-card">
+            <h3 class="pc-h">訂定規範</h3>
+            <dl class="pc-rules">
+              <div class="pc-rule"><dt>規則</dt><dd>撰寫 Design Token 建立規範，並與工程對齊：<ul class="pc-list"><li>引用 Tailwind 作為基礎 Token</li><li>專案獨立 Token 分為 Global／Semantic／Component 三層</li><li>統一命名規則，並整理 Mode 擴充與 Figma 限制等注意事項</li></ul></dd></div>
+              <div class="pc-rule"><dt>配套</dt><dd>規範文件</dd></div>
+            </dl>
+            <div class="pc-figs">
+              <div class="pc-pair">
+                <img class="pc-shot" width="1036" height="1338" src="assets/in02_img_spec1.webp?v=2" srcset="assets/in02_img_spec1-1x.webp?v=2 1x, assets/in02_img_spec1.webp?v=2 2x" alt="Design Token 建立規範（上）：Token 整體架構、Tailwind 資料庫引用規範、Token 屬性" loading="lazy" decoding="async">
+                <img class="pc-shot" width="820" height="1052" src="assets/in02_img_spec2.webp" srcset="assets/in02_img_spec2-1x.webp 1x, assets/in02_img_spec2.webp 2x" alt="Design Token 建立規範（下）：Token 層級結構、命名規則、Mode 模式應用、Figma Variable 限制" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+          <div class="ds-surface pb-card">
+            <h3 class="pc-h">建置工具</h3>
+            <dl class="pc-rules">
+              <div class="pc-rule"><dt>規則</dt><dd>建立 Design Token 文件的表格元件（Collection、Color、Typography 等）。<br>統一記錄格式，並標示製作者與最後更新日期。</dd></div>
+              <div class="pc-rule"><dt>配套</dt><dd>Design Token 表格元件、匯入 Tailwind Token 的 Figma Library</dd></div>
+            </dl>
+            <div class="pc-figs">
+              <img class="pc-shot" width="1768" height="374" src="assets/in02_img_tool1.webp" srcset="assets/in02_img_tool1-1x.webp 1x, assets/in02_img_tool1.webp 2x" alt="Design Token 文件表格元件：Collection 標題列與 Color 表格" loading="lazy" decoding="async">
+              <img class="pc-shot" width="1534" height="724" src="assets/in02_img_tool2.webp" srcset="assets/in02_img_tool2-1x.webp 1x, assets/in02_img_tool2.webp 2x" alt="Design Token 文件表格元件：Typography 表格" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="Result" hint-size="100%,400px">
+      <div class="pb-wrap">
+        <div class="ds-surface pb-card">
+          <div class="rs-quote">
+            <span class="rs-q" aria-hidden="true">“</span>
+            <p class="pb-text pb-lead">在莓卡官網專案首次導入，建立 Global、Semantic、Component 三層 Token，驗證規範可行。<br>團隊後續專案也陸續沿用此規範。</p>
+            <span class="rs-q rs-q-close" aria-hidden="true">”</span>
+          </div>
+          <div class="rs-stack">
+            <div class="rs-group">
+              <div class="rs-head">
+                <h3 class="pc-h">莓卡官網 Design Token</h3>
+                <a class="rs-link" href="UIUX_04_Mega.dc.html" onClick="{{ goMega }}"><span class="rs-link-text">前往專案</span><span class="rs-link-arrow" aria-hidden="true">↗</span></a>
+              </div>
+              <div class="rs-pair">
+                <img class="pc-shot" width="1258" height="1074" src="assets/in02_img_result1.webp" srcset="assets/in02_img_result1-1x.webp 1x, assets/in02_img_result1.webp 2x" alt="莓卡官網 Design Token：Global Token（Color、Font）" loading="lazy" decoding="async">
+                <img class="pc-shot" width="1606" height="1162" src="assets/in02_img_result2.webp" srcset="assets/in02_img_result2-1x.webp 1x, assets/in02_img_result2.webp 2x" alt="莓卡官網 Design Token：Semantic Token（Color、Typography）" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="rs-group">
+              <div class="rs-head">
+                <h3 class="pc-h">PlayHorny SDK Design Token</h3>
+                <a class="rs-link" href="UIUX_01_SDK_UI.dc.html" onClick="{{ goSdk }}"><span class="rs-link-text">前往專案</span><span class="rs-link-arrow" aria-hidden="true">↗</span></a>
+              </div>
+              <img class="pc-shot" width="1764" height="1224" src="assets/in02_img_result3.webp" srcset="assets/in02_img_result3-1x.webp 1x, assets/in02_img_result3.webp 2x" alt="PlayHorny SDK Design Token：Color、Typography、Dimension" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+    </dc-import>
+
+  </main>
+</div>
+
+<dc-import name="Com_ToTop" tone="dark" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { leaving: false, loaded: false };
+
+  componentDidMount() {
+    const go = () => window.PT ? window.PT.mount(this, { fallback: 4000, hero: true }) : setTimeout(go, 16);
+    go();
+  }
+  componentWillUnmount() { clearTimeout(this._fallback); }
+
+  navigate(url) { window.PT ? window.PT.navigate(this, url) : (window.location.href = url); }
+
+  renderVals() {
+    const go = (url) => (e) => { if (e && e.preventDefault) e.preventDefault(); this.navigate(url); };
+    return {
+      people: [
+        { avatar: 'assets/uiux_img_user2.webp', name: 'PlayHorny', role: 'Designer (Me)' }
+      ],
+      software: [
+        { icon: 'assets/uiux_icon_figma.webp', label: 'Figma' }
+      ],
+      goBack: () => this.navigate('Page_UIUX.dc.html'),
+      goSdk: go('UIUX_01_SDK_UI.dc.html'),
+      goMega: go('UIUX_04_Mega.dc.html'),
+      nav: (url) => this.navigate(url),
+      ...(window.PT ? window.PT.cover(this) : { coverOpacity: 1, coverPointer: 'auto', leaveOpacity: 0, coverBg: '#1B1C20' })
+    };
+  }
+}
+</script>
+</body>
+</html>

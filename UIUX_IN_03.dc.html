@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" style="background: #1B1C20;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>共用元件整合｜RLZ's Portfolio</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RLZ's Portfolio">
+<meta property="og:title" content="共用元件整合｜RLZ's Portfolio">
+<meta property="og:image" content="https://portfolio.rlzdesign.workers.dev/assets/og_cover.jpg">
+<meta property="og:url" content="https://portfolio.rlzdesign.workers.dev/UIUX_IN_03.dc.html">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<style id="preload-bg">html, body { margin: 0; background: #1B1C20; } @view-transition { navigation: auto; } ::view-transition-old(root), ::view-transition-new(root) { animation: none; }</style>
+<style id="page-css">
+  .ds-surface { box-sizing: border-box; border-radius: clamp(12px, 1.042vw, 20px); background-color: #101010; background-image: linear-gradient(rgba(242, 242, 242, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(242, 242, 242, 0.04) 1px, transparent 1px); background-size: 24px 24px; background-size: 2.5833cqw 2.5833cqw; box-shadow: inset 0 0 0 1px rgba(242, 242, 242, 0.06), inset 0 0 clamp(10px, 1.25vw, 24px) rgba(242, 242, 242, 0.15); }
+  .pb-wrap { container-type: inline-size; }
+  .pb-card { display: flex; flex-direction: column; gap: clamp(24px, 3.014cqw, 48px); padding: clamp(40px, 6.849cqw, 100px) clamp(32px, 8.219cqw, 120px); }
+  .pb-text { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-primary, #F2F2F2); text-wrap: pretty; }
+  .pb-lead { font-size: var(--lead, clamp(22px, 1.667vw, 32px)); line-height: 1.6875; letter-spacing: 0.02em; text-align: center; }
+  .rs-quote { --lead: clamp(18px, 1.25vw, 24px); --q: clamp(22px, 1.667vw, 32px); display: grid; grid-template-columns: auto minmax(0, max-content) auto; justify-content: center; align-items: stretch; column-gap: clamp(10px, 1.37cqw, 20px); padding: clamp(20px, 3.425cqw, 50px) 0; }
+  .rs-q { align-self: start; font-family: 'Montserrat', serif; font-weight: 300; font-size: calc(var(--q) * 2.2); transform: translateY(calc((var(--q) - var(--lead)) * 0.84)); line-height: calc(var(--lead) * 1.6875); height: calc(var(--lead) * 1.6875); color: var(--color-second, #A7A7A7); }
+  .rs-q-close { align-self: end; }
+  .rs-group .pc-h { font-size: clamp(18px, 1.25vw, 24px); }
+  .pc-stack { display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px); }
+  .pc-h { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(22px, 1.667vw, 32px); line-height: 1.6875; letter-spacing: 0.02em; color: var(--color-primary, #F2F2F2); }
+  .cp-diagram { box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: clamp(6px, 0.822cqw, 12px); padding: clamp(28px, 4.11cqw, 60px) clamp(20px, 3.425cqw, 50px); border-radius: clamp(8px, 0.822cqw, 12px); background: rgba(242, 242, 242, 0.03); box-shadow: inset 0 0 0 1px rgba(242, 242, 242, 0.08); }
+  .cp-title { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 400; font-size: clamp(16px, 1.042vw, 20px); line-height: 1.7; letter-spacing: 0.02em; color: var(--color-primary, #F2F2F2); }
+  .cp-sub { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); }
+  .cp-row { width: 100%; margin-top: clamp(16px, 3.014cqw, 44px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 2.192cqw, 32px); }
+  .cp-box { box-sizing: border-box; aspect-ratio: 5 / 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.15em; padding: 0 0.8em; text-align: center; border-radius: clamp(6px, 0.548cqw, 8px); border: 1px dashed var(--color-third, #4A4850); background: rgba(242, 242, 242, 0.04); font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-primary, #F2F2F2); }
+  .cp-brand { letter-spacing: 0.04em; color: var(--color-second, #A7A7A7); }
+  @container (max-width: 640px) { .cp-row { grid-template-columns: minmax(0, 1fr); } .cp-box { aspect-ratio: 5 / 1.6; } }
+  .pc-docs { width: 80%; margin-inline: auto; display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(12px, 1.64cqw, 24px); align-items: start; }
+  .pc-doc { display: block; width: 100%; height: auto; border-radius: clamp(6px, 0.548cqw, 8px); }
+  .pc-docs-side { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(12px, 1.64cqw, 24px); }
+  .pc-shot { display: block; width: 100%; height: auto; border-radius: clamp(6px, 0.548cqw, 8px); }
+  .pc-stackimg { width: 70%; display: flex; flex-direction: column; overflow: hidden; border-radius: clamp(6px, 0.548cqw, 8px); }
+  .pc-stackimg .pc-shot { border-radius: 0; }
+  @container (max-width: 640px) { .pc-docs { width: 100%; grid-template-columns: minmax(0, 1fr); } }
+  .pc-rules { margin: 0; display: flex; flex-direction: column; gap: clamp(4px, 0.411cqw, 8px); }
+  .pc-rule { display: grid; grid-template-columns: 4em minmax(0, 1fr); column-gap: clamp(12px, 1.042vw, 20px); font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; }
+  .pc-rule dt { color: var(--color-primary, #F2F2F2); }
+  .pc-rule dd { margin: 0; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  .pc-h + .pc-lead { margin-top: calc(-1 * clamp(14px, 2.055cqw, 30px)); }
+  .pc-h + .st-list { margin-top: calc(-1 * clamp(14px, 2.055cqw, 30px)); }
+  .st-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: clamp(28px, 3.425cqw, 50px); }
+  .st-item { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(8px, 0.625vw, 12px); }
+  .tr-diagram { margin-top: clamp(12px, 1.37cqw, 20px); }
+  .tr-bullets { margin: 0; padding-left: 1.2em; list-style: disc; text-align: left; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); }
+  .tr-bullets li::marker { color: var(--color-third, #4A4850); }
+  .tr-tree { --gap: clamp(10px, 2.192cqw, 32px); --h1: clamp(14px, 1.6cqw, 24px); --h2: clamp(22px, 2.6cqw, 38px); --lc: var(--color-second, #A7A7A7); width: 100%; margin-top: clamp(16px, 2.4cqw, 36px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gap); }
+  .tr-root { grid-column: 2; grid-row: 1; }
+  .tr-stem { grid-column: 2; grid-row: 2; justify-self: center; width: 0; height: var(--h1); border-left: 1.5px solid var(--lc); }
+  .tr-col { grid-row: 3; position: relative; padding-top: var(--h2); }
+  .tr-col::before { content: ''; position: absolute; top: 0; height: var(--h2); box-sizing: border-box; border-top: 1.5px solid var(--lc); left: calc(var(--gap) / -2); right: calc(var(--gap) / -2); }
+  .tr-l::before { left: 50%; border-left: 1.5px solid var(--lc); border-top-left-radius: 10px; }
+  .tr-r::before { right: calc(50% - 1.5px); border-right: 1.5px solid var(--lc); border-top-right-radius: 10px; }
+  .tr-m::after { content: ''; position: absolute; top: 0; left: 50%; height: var(--h2); border-left: 1.5px solid var(--lc); }
+  .tr-arrow { position: absolute; left: 50%; top: calc(var(--h2) - 8px); width: 8px; height: 8px; box-sizing: border-box; border-right: 1.5px solid var(--lc); border-bottom: 1.5px solid var(--lc); transform: translateX(-50%) rotate(45deg); }
+  @container (max-width: 640px) { .tr-tree { grid-template-columns: minmax(0, 1fr); row-gap: 10px; } .tr-stem, .tr-col::before, .tr-m::after, .tr-arrow { display: none; } .tr-root, .tr-col { grid-column: auto; grid-row: auto; } .tr-col { padding-top: 0; } }
+  .dg-block { margin-top: clamp(12px, 1.37cqw, 20px); }
+  .dg-block + .dg-block { margin-top: clamp(12px, 1.64cqw, 24px); }
+  .dg-card { box-sizing: border-box; display: flex; flex-direction: column; gap: clamp(2px, 0.3cqw, 6px); padding: clamp(18px, 2.74cqw, 40px); border-radius: clamp(8px, 0.822cqw, 12px); background: rgba(242, 242, 242, 0.03); box-shadow: inset 0 0 0 1px rgba(242, 242, 242, 0.08); }
+  .dg-h { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 400; font-size: clamp(16px, 1.042vw, 20px); line-height: 1.7; letter-spacing: 0.02em; text-align: center; color: var(--color-primary, #F2F2F2); }
+  .dg-p { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  .dg-p.dg-intro { text-align: center; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; }
+  .dg-p.dg-note { margin-top: clamp(8px, 1.1cqw, 16px); font-size: clamp(14px, 0.833vw, 16px); }
+  .dg-grid { margin: clamp(10px, 1.37cqw, 20px) 0 0; padding: 0; list-style: none; display: grid; gap: clamp(8px, 1.1cqw, 16px); align-items: stretch; }
+  .dg-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .dg-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dg-tile { box-sizing: border-box; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; align-content: start; column-gap: 0.6em; row-gap: 0.6em; padding: clamp(12px, 1.64cqw, 24px); border-radius: clamp(6px, 0.548cqw, 8px); background: rgba(242, 242, 242, 0.04); box-shadow: inset 0 0 0 1px rgba(242, 242, 242, 0.08); }
+  .dg-tile > :not(.dg-no):not(.dg-t) { grid-column: 1 / -1; }
+  .dg-no { box-sizing: border-box; width: 1.5em; height: 1.5em; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--color-second, #A7A7A7); border-radius: 50%; font-family: 'Montserrat', 'Noto Sans TC', sans-serif; font-weight: 400; font-size: clamp(11px, 0.625vw, 12px); line-height: 1; color: var(--color-primary, #F2F2F2); }
+  .dg-t { font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 1.714; color: var(--color-primary, #F2F2F2); }
+  .dg-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5em; }
+  .dg-chips-label { font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 1.714; color: var(--color-primary, #F2F2F2); }
+  .dg-dots { margin: 0; padding-left: 1.2em; list-style: disc; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); }
+  .dg-dots li::marker { color: var(--color-second, #A7A7A7); }
+  .dg-chip { padding: 0 0.85em; border: 1px solid var(--color-third, #4A4850); border-radius: 999px; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.9; color: var(--color-primary, #F2F2F2); }
+  @container (max-width: 640px) { .dg-grid-3, .dg-grid-2 { grid-template-columns: minmax(0, 1fr); } }
+  .st-no { font-family: 'Montserrat', 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(18px, 1.25vw, 24px); line-height: 1.6875; letter-spacing: 0.04em; color: var(--color-second, #A7A7A7); }
+  .st-t { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 400; font-size: clamp(18px, 1.25vw, 24px); line-height: 1.6875; letter-spacing: 0.02em; color: var(--color-primary, #F2F2F2); }
+  .st-t + .st-d { margin-top: clamp(4px, 0.55cqw, 8px); }
+  .st-d { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  .rs-stats { margin: 0; padding: clamp(8px, 1.37cqw, 20px) 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .rs-stat { display: flex; flex-direction: column; align-items: center; gap: clamp(4px, 0.55cqw, 8px); padding: clamp(8px, 1.1cqw, 16px) clamp(12px, 2.19cqw, 32px); text-align: center; }
+  .rs-stat + .rs-stat { border-left: 1px solid rgba(242, 242, 242, 0.12); }
+  .rs-num { font-family: 'Montserrat', 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(48px, 5.48cqw, 80px); line-height: 1.1; color: var(--color-primary, #F2F2F2); }
+  .rs-label { margin-top: clamp(4px, 0.55cqw, 8px); font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-primary, #F2F2F2); text-wrap: pretty; }
+  .rs-sub { font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  @container (max-width: 640px) { .rs-stats { grid-template-columns: minmax(0, 1fr); } .rs-stat + .rs-stat { border-left: 0; border-top: 1px solid rgba(242, 242, 242, 0.12); padding-top: clamp(20px, 4cqw, 28px); } .rs-stat { padding-bottom: clamp(20px, 4cqw, 28px); } }
+  .rs-stack { display: flex; flex-direction: column; gap: clamp(28px, 3.425cqw, 50px); }
+  .rs-group { display: flex; flex-direction: column; gap: clamp(12px, 1.37cqw, 20px); }
+  .ph-box { box-sizing: border-box; width: 100%; aspect-ratio: 2400 / 1200; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--color-third, #4A4850); border-radius: clamp(12px, 1.042vw, 20px); font-family: 'Montserrat', 'Noto Sans TC', sans-serif; font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); letter-spacing: 0.08em; color: var(--color-third, #4A4850); }
+</style>
+<style id="pt-loader-css">#pt-loader{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B1C20;transition:opacity 450ms ease}#pt-loader.done{opacity:0;pointer-events:none}#pt-loader i{display:block;width:160px;height:1px;overflow:hidden;background:#F2F2F233}#pt-loader b{display:block;height:100%;background:#F2F2F2;transform-origin:left;transform:scaleX(0);animation:ptLoad 10s cubic-bezier(.08,.6,.2,1) forwards}#pt-loader span{font-family:'Noto Sans TC',sans-serif;font-weight:300;font-size:14px;line-height:24px;letter-spacing:0;color:#F2F2F2;font-variant-numeric:tabular-nums}@keyframes ptLoad{to{transform:scaleX(.92)}}@media (prefers-reduced-motion:reduce){#pt-loader b{animation-duration:.01s}}</style>
+<script id="pt-loader-js">(function(){var raf,ready=false,last=performance.now(),t0=performance.now();try{new PerformanceObserver(function(l){if(l.getEntries().length)last=performance.now()}).observe({type:'resource',buffered:true})}catch(e){}function pct(b){var m=getComputedStyle(b).transform;var a=m&&m!=='none'?parseFloat(m.split('(')[1]):0;return Math.round(a*100)}function idle(){return ready&&document.readyState==='complete'&&(!document.fonts||document.fonts.status==='loaded')&&performance.now()-last>700}function tick(){var el=document.getElementById('pt-loader');if(!el){if(!window.__ptDone)raf=requestAnimationFrame(tick);return}var b=el.querySelector('b'),n=el.querySelector('span');if(b&&n)n.textContent=pct(b)+'%';if(idle()||performance.now()-t0>20000){finish();return}raf=requestAnimationFrame(tick)}raf=requestAnimationFrame(tick);setTimeout(function(){finish()},20000);function finish(){if(window.__ptDone)return;window.__ptDone=true;cancelAnimationFrame(raf);var el=document.getElementById('pt-loader');if(!el){run();return}var b=el.querySelector('b'),n=el.querySelector('span');var t=getComputedStyle(b).transform;b.style.animation='none';b.style.transform=t;b.offsetWidth;b.style.transition='transform 260ms ease';b.style.transform='scaleX(1)';setTimeout(function(){if(n)n.textContent='100%';el.classList.add('done');run()},280);setTimeout(function(){el.remove()},800)}var cbs=[];function run(){var l=cbs;cbs=[];l.forEach(function(f){try{f()}catch(e){}})}window.__ptFinish=function(cb){ready=true;if(cb)cbs.push(cb);if(window.__ptDone&&!document.getElementById('pt-loader'))run()};window.addEventListener('pageshow',function(e){if(e.persisted)finish()})})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<div id="pt-loader" aria-hidden="true"><i><b></b></i><span>0%</span></div>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&amp;family=Noto+Sans+TC:wght@200;300;400&amp;display=swap">
+<link rel="stylesheet" href="_ds/portfolio-design-system-03ed5cab-7880-4aa2-b819-a2eaba3528c8/tokens/tokens.css">
+<script src="_ds/portfolio-design-system-03ed5cab-7880-4aa2-b819-a2eaba3528c8/_ds_bundle.js"></script>
+<script src="page-transition.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { background: #1B1C20; }
+  a { color: #F2F2F2; text-decoration: none; }
+  a:hover { color: #A7A7A7; }
+</style>
+</helmet>
+
+<div style="position: fixed; inset: 0; z-index: 100; background: #1B1C20; opacity: {{ coverOpacity }}; pointer-events: {{ coverPointer }}; transition: opacity 420ms ease-out;"></div>
+<div aria-hidden="true" style="position: fixed; inset: 0; z-index: 101; pointer-events: none; background: {{ coverBg }}; opacity: {{ leaveOpacity }}; transition: opacity 300ms ease-out;"></div>
+
+<div style="background: #1B1C20; color: var(--color-primary, #F2F2F2);">
+
+  <dc-import name="Com_Project_Hero" src="assets/in03_img_cover.webp?v=2" src1x="assets/in03_img_cover-1x.webp?v=2" alt="共用元件整合主視覺" hint-size="100%,500px">
+    <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 70;"><dc-import name="Com_Nav" current="" tone="dark" on-navigate="{{ nav }}" hint-size="100%,108px"></dc-import></div>
+  </dc-import>
+
+  <main style="box-sizing: border-box; width: 100%; max-width: calc(min(1460px, max(76.04vw, 720px)) + 2 * clamp(20px, 4vw, 64px)); margin: 0 auto; padding: 0 clamp(20px, 4vw, 64px) clamp(200px, 18vh, 300px); display: flex; flex-direction: column;">
+
+    <dc-import name="Com_Project_Head" brand="團隊內部推動" subtitle="共用元件整合" quote="將分散的 Header、Footer 收斂為共用元件，讓跨品牌、跨頁面維持一致，並能一改即同步。" about="公司同時經營兩個品牌、多種頁面類型，Header、Footer 長期以複製貼上製作，樣式越來越分散。我主動盤點現況並提出共用元件的做法，召集跨部門會議對齊需求，再依企劃統整的規格建立主元件與使用文件。" tags="Component, Token, Cross-team" tag-fill="true" category="Internal" date="2025" people="{{ people }}" software="{{ software }}" on-back="{{ goBack }}" hint-size="100%,1100px"></dc-import>
+
+    <dc-import name="Com_Project_Section" title="Problem" first="true" hint-size="100%,400px">
+      <div class="pb-wrap">
+        <div class="ds-surface pb-card">
+          <div class="rs-quote">
+            <span class="rs-q" aria-hidden="true">“</span>
+            <p class="pb-text pb-lead">公司同時經營 PlayHorny 與 Mega Games 兩個獨立品牌，各自又有活動頁、Landing Page、送審頁等不同頁面類型。<br>Header、Footer 的樣式因此越來越多，每次製作拿到的需求都不同，<br>各頁面以複製貼上各自修改，難以維持一致，也無法同步更新。</p>
+            <span class="rs-q rs-q-close" aria-hidden="true">”</span>
+          </div>
+          <div class="cp-diagram" role="img" aria-label="Copy & Paste：PlayHorny 與 Mega Games 各頁面類型的 Header、Footer 各自為獨立個體">
+            <h4 class="cp-title">Copy &amp; Paste</h4>
+            <p class="cp-sub">各自為獨立個體</p>
+            <div class="cp-row">
+              <div class="cp-box"><span class="cp-brand">PlayHorny</span><span>Header（活動頁 A）</span></div>
+              <div class="cp-box"><span class="cp-brand">Mega Games</span><span>Header（Landing Page）</span></div>
+              <div class="cp-box"><span class="cp-brand">Mega Games</span><span>Header（送審頁）</span></div>
+              <div class="cp-box"><span class="cp-brand">Mega Games</span><span>Footer（活動頁 A）</span></div>
+              <div class="cp-box"><span class="cp-brand">PlayHorny</span><span>Footer（送審頁）</span></div>
+              <div class="cp-box"><span class="cp-brand">PlayHorny</span><span>Footer（活動頁 C）</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="Solution" hint-size="100%,400px">
+      <div class="pb-wrap">
+        <div class="pc-stack">
+          <div class="ds-surface pb-card">
+            <h3 class="pc-h">階段一：釐清規格</h3>
+            <ol class="st-list">
+              <li class="st-item"><span class="st-no">01</span><div class="st-body"><h4 class="st-t">My Chara：盤點現況與提案</h4><p class="st-d">彙整目前使用中的 Header 與 Footer，依品牌與頁面類型整理規格差異。</p><p class="st-d">盤點後提出新做法：建立共用主元件，各頁面套用子元件，主元件一改，所有頁面同步更新。</p>
+                <div class="cp-diagram tr-diagram" role="img" aria-label="一改即同步：共用 Header、Footer 模板更新後，套用至頁面類型 A、B、C 的子元件同步更新">
+                  <h4 class="cp-title">一改即同步</h4>
+                  <ul class="tr-bullets"><li>主元件更改、所有子元件同步。</li><li>依需求設定變數內容。</li></ul>
+                  <div class="tr-tree">
+                    <div class="cp-box tr-root">共用 Header、Footer 模板</div>
+                    <div class="tr-stem"></div>
+                    <div class="tr-col tr-l"><i class="tr-arrow"></i><div class="cp-box">套用至頁面類型 A</div></div>
+                    <div class="tr-col tr-m"><i class="tr-arrow"></i><div class="cp-box">套用至頁面類型 B</div></div>
+                    <div class="tr-col tr-r"><i class="tr-arrow"></i><div class="cp-box">套用至頁面類型 C</div></div>
+                  </div>
+                </div></div></li>
+              <li class="st-item"><span class="st-no">02</span><div class="st-body"><h4 class="st-t">My Chara：跨部門對齊</h4><p class="st-d">與行銷、營運、企劃、工程、PM 開會，確認各部門對元件的需求與限制。</p>
+                <div class="dg-block">
+                  <div class="dg-card">
+                    <h5 class="dg-h">Header</h5>
+                    <p class="dg-p dg-intro">與各單位確認後，調整成 3 種樣式：</p>
+                    <ol class="dg-grid dg-grid-3">
+                      <li class="dg-tile"><span class="dg-no">1</span><span class="dg-t">PlayHorny 樣式</span><div class="dg-chips"><span class="dg-chips-label">適用頁面：</span><span class="dg-chip">R18 活動頁</span><span class="dg-chip">Landing Page</span></div></li>
+                      <li class="dg-tile"><span class="dg-no">2</span><span class="dg-t">Mega 樣式 A</span><div class="dg-chips"><span class="dg-chips-label">適用頁面：</span><span class="dg-chip">R15 活動頁</span></div></li>
+                      <li class="dg-tile"><span class="dg-no">3</span><span class="dg-t">Mega 樣式 B</span><div class="dg-chips"><span class="dg-chips-label">適用頁面：</span><span class="dg-chip">送審頁</span></div></li>
+                    </ol>
+                    <p class="dg-p dg-note">＊Header 中將移除 I18n（語系切換）與 menu 按鈕。</p>
+                  </div>
+                </div>
+                <div class="dg-block">
+                  <div class="dg-card">
+                    <h5 class="dg-h">Footer</h5>
+                    <p class="dg-p dg-intro">與各單位確認後，調整成 2 種樣式：</p>
+                    <ol class="dg-grid dg-grid-2">
+                      <li class="dg-tile">
+                        <span class="dg-no">1</span><span class="dg-t">樣式 A</span>
+                        <div class="dg-chips"><span class="dg-chips-label">適用頁面：</span><span class="dg-chip">R18</span><span class="dg-chip">R15</span><span class="dg-chip">送審頁</span></div>
+                        <ul class="dg-dots"><li>背景底色</li><li>文字顏色</li><li>文字字重</li></ul>
+                      </li>
+                      <li class="dg-tile">
+                        <span class="dg-no">2</span><span class="dg-t">樣式 B</span>
+                        <div class="dg-chips"><span class="dg-chips-label">適用頁面：</span><span class="dg-chip">Landing Page</span></div>
+                        <p class="dg-p">該頁面定位為次要，依照統一設計規範，<br>為固定樣式，不可調整。</p>
+                      </li>
+                    </ol>
+                  </div>
+                </div></div></li>
+              <li class="st-item"><span class="st-no">03</span><div class="st-body"><h4 class="st-t">企劃：統整規格</h4><p class="st-d">企劃統整會議結論，製作 Header、Footer 的規格文件。</p></div></li>
+            </ol>
+          </div>
+          <div class="ds-surface pb-card">
+            <h3 class="pc-h">階段二：建立元件</h3>
+            <dl class="pc-rules pc-lead">
+              <div class="pc-rule"><dt>做法</dt><dd>依據規格文件建立共用元件，主元件一改，所有頁面同步更新。</dd></div>
+              <div class="pc-rule"><dt>對應素材</dt><dd>Header、Footer 主元件、使用文件</dd></div>
+            </dl>
+            <div class="pc-docs">
+              <div class="pc-docs-side">
+                <img class="pc-shot" width="1116" height="928" src="assets/in03_img_footer.webp?v=2" srcset="assets/in03_img_footer-1x.webp?v=2 1x, assets/in03_img_footer.webp?v=2 2x" alt="Footer 元件標註（Mobile）：各區塊對應的顏色 Token、不可變動的分級標章、依專案需求更換的公司 Logo" loading="lazy" decoding="async">
+                <div class="pc-stackimg">
+                <img class="pc-shot" width="416" height="372" src="assets/in03_img_header_ph.webp" alt="PlayHorny Header 元件：登入前、登入後與帳號選單" loading="lazy" decoding="async">
+                <img class="pc-shot" width="608" height="158" src="assets/in03_img_header_mega.webp" alt="Mega Games Header 元件" loading="lazy" decoding="async">
+                </div>
+              </div>
+              <img class="pc-doc" width="1051" height="2437" src="assets/in03_img_doc.webp?v=3" srcset="assets/in03_img_doc-1x.webp?v=3 1x, assets/in03_img_doc.webp?v=3 2x" alt="Footer 使用文件：元件概述、可變更屬性與 Token 對應規範、不可變更屬性、美術使用步驟" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="Result" hint-size="100%,400px">
+      <div class="pb-wrap">
+        <div class="ds-surface pb-card">
+          <ul class="rs-stats">
+            <li class="rs-stat"><span class="rs-num">3</span><span class="rs-label">種 Header 共用樣式</span><span class="rs-sub">由多種樣式收斂</span></li>
+            <li class="rs-stat"><span class="rs-num">2</span><span class="rs-label">種 Footer 共用樣式</span><span class="rs-sub">由多種樣式收斂</span></li>
+            <li class="rs-stat"><span class="rs-num">1</span><span class="rs-label">個主元件，一改即同步</span><span class="rs-sub">取代「複製貼上、各自修改」</span></li>
+          </ul>
+        </div>
+      </div>
+    </dc-import>
+
+  </main>
+</div>
+
+<dc-import name="Com_ToTop" tone="dark" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { leaving: false, loaded: false };
+
+  componentDidMount() {
+    const go = () => window.PT ? window.PT.mount(this, { fallback: 4000, hero: true }) : setTimeout(go, 16);
+    go();
+  }
+  componentWillUnmount() { clearTimeout(this._fallback); }
+
+  navigate(url) { window.PT ? window.PT.navigate(this, url) : (window.location.href = url); }
+
+  renderVals() {
+    return {
+      people: [
+        { avatar: 'assets/uiux_img_user2.webp', name: 'PlayHorny', role: 'Designer (Me)' }
+      ],
+      software: [
+        { icon: 'assets/uiux_icon_figma.webp', label: 'Figma' }
+      ],
+      goBack: () => this.navigate('Page_UIUX.dc.html'),
+      nav: (url) => this.navigate(url),
+      ...(window.PT ? window.PT.cover(this) : { coverOpacity: 1, coverPointer: 'auto', leaveOpacity: 0, coverBg: '#1B1C20' })
+    };
+  }
+}
+</script>
+</body>
+</html>

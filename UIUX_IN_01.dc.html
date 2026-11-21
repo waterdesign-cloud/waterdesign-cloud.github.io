@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" style="background: #1B1C20;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figma Team 檔案歸納｜RLZ's Portfolio</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RLZ's Portfolio">
+<meta property="og:title" content="Figma Team 檔案歸納｜RLZ's Portfolio">
+<meta property="og:image" content="https://portfolio.rlzdesign.workers.dev/assets/og_cover.jpg">
+<meta property="og:url" content="https://portfolio.rlzdesign.workers.dev/UIUX_IN_01.dc.html">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<style id="preload-bg">html, body { margin: 0; background: #1B1C20; } @view-transition { navigation: auto; } ::view-transition-old(root), ::view-transition-new(root) { animation: none; }</style>
+<style id="page-css">
+  .ds-surface { box-sizing: border-box; border-radius: clamp(12px, 1.042vw, 20px); background-color: #101010; background-image: linear-gradient(rgba(242, 242, 242, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(242, 242, 242, 0.04) 1px, transparent 1px); background-size: 24px 24px; background-size: 2.5833cqw 2.5833cqw; box-shadow: inset 0 0 0 1px rgba(242, 242, 242, 0.06), inset 0 0 clamp(10px, 1.25vw, 24px) rgba(242, 242, 242, 0.15); }
+  .pb-wrap { container-type: inline-size; }
+  .pb-card { display: flex; flex-direction: column; gap: clamp(24px, 3.014cqw, 48px); padding: clamp(40px, 6.849cqw, 100px) clamp(32px, 8.219cqw, 120px); }
+  .pb-text { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; color: var(--color-primary, #F2F2F2); text-wrap: pretty; }
+  .pb-lead { font-size: var(--lead, clamp(22px, 1.667vw, 32px)); line-height: 1.6875; letter-spacing: 0.02em; text-align: center; }
+  .rs-quote { --lead: clamp(18px, 1.25vw, 24px); --q: clamp(22px, 1.667vw, 32px); display: grid; grid-template-columns: auto minmax(0, max-content) auto; justify-content: center; align-items: stretch; column-gap: clamp(10px, 1.37cqw, 20px); padding: clamp(20px, 3.425cqw, 50px) 0; }
+  .rs-q { align-self: start; font-family: 'Montserrat', serif; font-weight: 300; font-size: calc(var(--q) * 2.2); transform: translateY(calc((var(--q) - var(--lead)) * 0.84)); line-height: calc(var(--lead) * 1.6875); height: calc(var(--lead) * 1.6875); color: var(--color-second, #A7A7A7); }
+  .rs-q-close { align-self: end; }
+  .rs-group .pc-h { font-size: clamp(18px, 1.25vw, 24px); }
+  .pb-figs { width: 95%; align-self: center; display: grid; grid-template-columns: 2.018fr 0.409fr; align-items: start; gap: clamp(8px, 1.096cqw, 16px); }
+  .pb-fig { margin: 0; min-width: 0; display: flex; flex-direction: column; gap: clamp(8px, 0.822cqw, 12px); }
+  .pb-fig figcaption { font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); }
+  .pb-fig img { display: block; width: 100%; height: auto; border-radius: clamp(6px, 0.548cqw, 8px); }
+  @container (max-width: 560px) { .pb-figs { width: 100%; grid-template-columns: minmax(0, 1fr); } .pb-fig + .pb-fig { width: 40%; } }
+  .pc-stack { display: flex; flex-direction: column; gap: clamp(8px, 0.833vw, 16px); }
+  .pc-h { margin: 0; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(22px, 1.667vw, 32px); line-height: 1.6875; letter-spacing: 0.02em; color: var(--color-primary, #F2F2F2); }
+  .pc-h + .pc-rules { margin-top: calc(-1 * clamp(14px, 2.055cqw, 30px)); }
+  .pc-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: clamp(16px, 2.192cqw, 32px); }
+  .pc-pair.pc-pair-pages { grid-template-columns: minmax(0, 1fr); }
+  .pc-pair-pages .pc-fig { width: 80%; margin-inline: auto; }
+  @container (max-width: 640px) { .pc-pair, .pc-pair.pc-pair-pages { grid-template-columns: minmax(0, 1fr); } .pc-pair-pages .pc-fig { width: 100%; } }
+  .pc-fig { margin: 0; display: flex; flex-direction: column; gap: clamp(8px, 0.822cqw, 12px); }
+  .pc-fig figcaption { font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; color: var(--color-second, #A7A7A7); }
+  .pc-rules { margin: 0; display: flex; flex-direction: column; gap: clamp(4px, 0.411cqw, 8px); }
+  .pc-rule { display: grid; grid-template-columns: 3em minmax(0, 1fr); column-gap: clamp(12px, 1.042vw, 20px); font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(14px, 0.833vw, 16px); line-height: 2; }
+  .pc-rule dt { color: var(--color-primary, #F2F2F2); }
+  .pc-rule dd { margin: 0; color: var(--color-second, #A7A7A7); text-wrap: pretty; }
+  .pc-shot { display: block; width: 100%; height: auto; border-radius: clamp(6px, 0.548cqw, 8px); }
+  .pc-scroll { overflow-x: auto; border: 1px solid var(--color-third, #4A4850); border-radius: clamp(6px, 0.548cqw, 8px); }
+  .pc-table { width: 100%; min-width: 560px; border-collapse: collapse; font-family: var(--font-family-base, 'Noto Sans TC', sans-serif); font-weight: 300; font-size: clamp(12px, 0.729vw, 14px); line-height: 1.714; text-align: left; }
+  .pc-table th, .pc-table td { padding: 0.9em 1.2em; vertical-align: top; border-bottom: 1px solid var(--color-third, #4A4850); }
+  .pc-table tr:last-child td { border-bottom: 0; }
+  .pc-table th { font-weight: 300; color: var(--color-primary, #F2F2F2); background: rgba(242, 242, 242, 0.06); }
+  .pc-table td { color: var(--color-second, #A7A7A7); }
+  .pc-table td:nth-child(2) { color: var(--color-primary, #F2F2F2); white-space: nowrap; }
+  .pc-table td b { font-weight: 400; color: var(--color-primary, #F2F2F2); }
+  .pc-code { display: inline-block; padding: 0.1em 0.55em; border-radius: 0.4em; background: rgba(242, 242, 242, 0.08); font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.95em; color: var(--color-primary, #F2F2F2); white-space: nowrap; }
+  .rs-stack { display: flex; flex-direction: column; gap: clamp(28px, 3.425cqw, 50px); }
+  .rs-group { display: flex; flex-direction: column; gap: clamp(12px, 1.37cqw, 20px); }
+  .pb-figs.rs-before { width: 100%; align-self: stretch; grid-template-columns: minmax(0, 4.94fr) minmax(0, 1fr); }
+  .pb-figs.rs-after { width: 100%; align-self: stretch; grid-template-columns: minmax(0, 4.806fr) minmax(0, 1fr); }
+  @container (max-width: 560px) { .pb-figs.rs-before, .pb-figs.rs-after { grid-template-columns: minmax(0, 1fr); } }
+</style>
+<style id="pt-loader-css">#pt-loader{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#1B1C20;transition:opacity 450ms ease}#pt-loader.done{opacity:0;pointer-events:none}#pt-loader i{display:block;width:160px;height:1px;overflow:hidden;background:#F2F2F233}#pt-loader b{display:block;height:100%;background:#F2F2F2;transform-origin:left;transform:scaleX(0);animation:ptLoad 10s cubic-bezier(.08,.6,.2,1) forwards}#pt-loader span{font-family:'Noto Sans TC',sans-serif;font-weight:300;font-size:14px;line-height:24px;letter-spacing:0;color:#F2F2F2;font-variant-numeric:tabular-nums}@keyframes ptLoad{to{transform:scaleX(.92)}}@media (prefers-reduced-motion:reduce){#pt-loader b{animation-duration:.01s}}</style>
+<script id="pt-loader-js">(function(){var raf,ready=false,last=performance.now(),t0=performance.now();try{new PerformanceObserver(function(l){if(l.getEntries().length)last=performance.now()}).observe({type:'resource',buffered:true})}catch(e){}function pct(b){var m=getComputedStyle(b).transform;var a=m&&m!=='none'?parseFloat(m.split('(')[1]):0;return Math.round(a*100)}function idle(){return ready&&document.readyState==='complete'&&(!document.fonts||document.fonts.status==='loaded')&&performance.now()-last>700}function tick(){var el=document.getElementById('pt-loader');if(!el){if(!window.__ptDone)raf=requestAnimationFrame(tick);return}var b=el.querySelector('b'),n=el.querySelector('span');if(b&&n)n.textContent=pct(b)+'%';if(idle()||performance.now()-t0>20000){finish();return}raf=requestAnimationFrame(tick)}raf=requestAnimationFrame(tick);setTimeout(function(){finish()},20000);function finish(){if(window.__ptDone)return;window.__ptDone=true;cancelAnimationFrame(raf);var el=document.getElementById('pt-loader');if(!el){run();return}var b=el.querySelector('b'),n=el.querySelector('span');var t=getComputedStyle(b).transform;b.style.animation='none';b.style.transform=t;b.offsetWidth;b.style.transition='transform 260ms ease';b.style.transform='scaleX(1)';setTimeout(function(){if(n)n.textContent='100%';el.classList.add('done');run()},280);setTimeout(function(){el.remove()},800)}var cbs=[];function run(){var l=cbs;cbs=[];l.forEach(function(f){try{f()}catch(e){}})}window.__ptFinish=function(cb){ready=true;if(cb)cbs.push(cb);if(window.__ptDone&&!document.getElementById('pt-loader'))run()};window.addEventListener('pageshow',function(e){if(e.persisted)finish()})})();</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<div id="pt-loader" aria-hidden="true"><i><b></b></i><span>0%</span></div>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&amp;family=Noto+Sans+TC:wght@200;300;400&amp;display=swap">
+<link rel="stylesheet" href="_ds/portfolio-design-system-03ed5cab-7880-4aa2-b819-a2eaba3528c8/tokens/tokens.css">
+<script src="_ds/portfolio-design-system-03ed5cab-7880-4aa2-b819-a2eaba3528c8/_ds_bundle.js"></script>
+<script src="page-transition.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { background: #1B1C20; }
+  a { color: #F2F2F2; text-decoration: none; }
+  a:hover { color: #A7A7A7; }
+</style>
+</helmet>
+
+<div style="position: fixed; inset: 0; z-index: 100; background: #1B1C20; opacity: {{ coverOpacity }}; pointer-events: {{ coverPointer }}; transition: opacity 420ms ease-out;"></div>
+<div aria-hidden="true" style="position: fixed; inset: 0; z-index: 101; pointer-events: none; background: {{ coverBg }}; opacity: {{ leaveOpacity }}; transition: opacity 300ms ease-out;"></div>
+
+<div style="background: #1B1C20; color: var(--color-primary, #F2F2F2);">
+
+  <dc-import name="Com_Project_Hero" src="assets/in01_img_cover.webp?v=2" src1x="assets/in01_img_cover-1x.webp?v=2" alt="Figma Team 檔案歸納 主視覺" hint-size="100%,500px">
+    <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 70;"><dc-import name="Com_Nav" current="" tone="dark" on-navigate="{{ nav }}" hint-size="100%,108px"></dc-import></div>
+  </dc-import>
+
+  <main style="box-sizing: border-box; width: 100%; max-width: calc(min(1460px, max(76.04vw, 720px)) + 2 * clamp(20px, 4vw, 64px)); margin: 0 auto; padding: 0 clamp(20px, 4vw, 64px) clamp(200px, 18vh, 300px); display: flex; flex-direction: column;">
+
+    <dc-import name="Com_Project_Head" brand="團隊內部推動" subtitle="Figma Team 檔案歸納" quote="為 Figma 雲端的檔案分類建立一套共用規範，讓團隊在同一套規則下協作。" about="平台設計部門隸屬於新創團隊，過去沒有一套明確的檔案規則。為了讓後續維運更容易，我主動提出檔案規範，並推動團隊採用。" tags="Figma, Guideline, Teamwork" tag-fill="true" category="Internal" date="2025" people="{{ people }}" software="{{ software }}" on-back="{{ goBack }}" hint-size="100%,1100px"></dc-import>
+
+    <dc-import name="Com_Project_Section" title="Problem" first="true" hint-size="100%,400px">
+      <div class="pb-wrap">
+        <div class="ds-surface pb-card">
+          <div class="rs-quote">
+            <span class="rs-q" aria-hidden="true">“</span>
+            <p class="pb-text pb-lead">團隊在 Figma 雲端面臨三個問題：<br>專案檔案混雜、檔案封面不統一、頁面結構凌亂。<br>由於缺乏共同規則，不僅團隊內找檔耗時，其他部門也難以找到需要的檔案。</p>
+            <span class="rs-q rs-q-close" aria-hidden="true">”</span>
+          </div>
+          <div class="pb-figs">
+            <figure class="pb-fig"><figcaption>Figma 外層檔案資料夾</figcaption><img src="assets/in01_img_problem1-1x.webp" srcset="assets/in01_img_problem1-1x.webp 1x, assets/in01_img_problem1.webp 2x" alt="推動前的 Figma 雲端：各專案檔案混雜、封面樣式不統一" loading="lazy" decoding="async" width="2000" height="991"></figure>
+            <figure class="pb-fig"><figcaption>Figma 檔內頁面結構</figcaption><img src="assets/in01_img_problem2.webp" alt="推動前的檔案內頁面清單：頁面結構凌亂" loading="lazy" decoding="async" width="318" height="778"></figure>
+          </div>
+        </div>
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="Solution" hint-size="100%,400px">
+      <div class="pb-wrap">
+        <div class="pc-stack">
+          <div class="ds-surface pb-card">
+            <h3 class="pc-h">外層：資料夾</h3>
+            <dl class="pc-rules">
+              <div class="pc-rule"><dt>規則</dt><dd>以「[編號]_[性質]」命名，分為五大類並定義用途</dd></div>
+              <div class="pc-rule"><dt>配套</dt><dd>分類說明表，作為新人指導依據</dd></div>
+            </dl>
+            <div class="pc-scroll">
+              <table class="pc-table">
+                <thead><tr><th>資料夾名稱</th><th>內容分類</th><th>核心職責</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="pc-code">00_System</span></td><td>設計系統與規範</td><td><b>基礎設計資產庫：</b>集中放置 Design Token (Tailwind)、Handoff 規範、頁面管理原則及 Handoff 工具。<b>所有設計檔案的源頭。</b></td></tr>
+                  <tr><td><span class="pc-code">01_Platform</span></td><td>產品與技術平台</td><td><b>主要產品設計：</b>包含 PH 平台、Mega 官網、PH / Mega SDK 相關的介面設計檔案。</td></tr>
+                  <tr><td><span class="pc-code">02_Campaigns</span></td><td>專案活動與官網</td><td><b>活動推廣設計：</b>專案活動頁面設計稿，以及與活動相關的官網的介面設計檔案。</td></tr>
+                  <tr><td><span class="pc-code">03_Marketing</span></td><td>行銷視覺素材</td><td><b>非介面視覺資產：</b>行銷活動所需的圖素、Banner 視覺素材等。</td></tr>
+                  <tr><td><span class="pc-code">04_ART_Discussion</span></td><td>美術發想討論</td><td><b>美術專屬討論區：</b>供美術同仁進行自發性提案、設計議題討論、概念發想等。</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="ds-surface pb-card">
+            <h3 class="pc-h">中層：檔案封面</h3>
+            <dl class="pc-rules">
+              <div class="pc-rule"><dt>規則</dt><dd>標示檔案類型與分類標籤，一眼辨識</dd></div>
+              <div class="pc-rule"><dt>配套</dt><dd>封面元件＋導入教學</dd></div>
+            </dl>
+            <div class="pc-pair">
+            <figure class="pc-fig">
+              <figcaption>封面元件</figcaption>
+              <img class="pc-shot" src="assets/in01_img_covers-1x.webp" srcset="assets/in01_img_covers-1x.webp 1x, assets/in01_img_covers.webp 2x" alt="封面元件：依檔案類型以不同色彩與標籤區分的六種封面樣式" loading="lazy" decoding="async" width="1272" height="1104">
+            </figure>
+            <figure class="pc-fig">
+              <figcaption>導入教學</figcaption>
+              <img class="pc-shot" src="assets/in01_img_guide.webp" alt="導入教學四步驟：建立 Cover 頁面、導入封面元件、編輯封面資訊欄位、設定為專案封面" loading="lazy" decoding="async" width="1060" height="1350">
+            </figure>
+            </div>
+          </div>
+          <div class="ds-surface pb-card">
+            <h3 class="pc-h">內層：頁面結構</h3>
+            <dl class="pc-rules">
+              <div class="pc-rule"><dt>規則</dt><dd>統一分區（Handoff／Design／Archive）與狀態標示</dd></div>
+              <div class="pc-rule"><dt>配套</dt><dd>專案範本，新專案直接複製</dd></div>
+            </dl>
+            <div class="pc-pair pc-pair-pages">
+              <figure class="pc-fig">
+                <figcaption>頁面整理規則總覽</figcaption>
+                <img class="pc-shot" src="assets/in01_img_rules.webp" alt="頁面整理規則總覽：檔案封面、專案基本資訊與狀態說明、Handoff、Design、Archive 四個區塊，以及狀態標示、分隔線、子層級符號與專案範本四項規則" loading="lazy" decoding="async" width="1528" height="1172">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dc-import>
+
+    <dc-import name="Com_Project_Section" title="Result" hint-size="100%,400px">
+      <div class="pb-wrap">
+        <div class="ds-surface pb-card">
+          <div class="rs-quote">
+            <span class="rs-q" aria-hidden="true">“</span>
+            <p class="pb-text pb-lead">設計檔案規範推動後，<br>企劃團隊也一同採納，並依照同一套規則整理檔案。</p>
+            <span class="rs-q rs-q-close" aria-hidden="true">”</span>
+          </div>
+          <div class="rs-stack">
+            <div class="rs-group">
+              <h3 class="pc-h">BEFORE</h3>
+              <div class="pb-figs rs-before">
+                <figure class="pb-fig"><figcaption>Figma 外層檔案資料夾</figcaption><img src="assets/in01_img_problem1-1x.webp" srcset="assets/in01_img_problem1-1x.webp 1x, assets/in01_img_problem1.webp 2x" alt="推動前的 Figma 雲端資料夾：各專案檔案混雜、封面樣式不統一" loading="lazy" decoding="async" width="2000" height="991"></figure>
+                <figure class="pb-fig"><figcaption>Figma 檔內頁面結構</figcaption><img src="assets/in01_img_problem2.webp" alt="推動前的檔案內頁面清單：頁面結構凌亂" loading="lazy" decoding="async" width="318" height="778"></figure>
+              </div>
+            </div>
+            <div class="rs-group">
+              <h3 class="pc-h">AFTER</h3>
+              <div class="pb-figs rs-after">
+                <figure class="pb-fig"><figcaption>Figma 外層檔案資料夾</figcaption><img src="assets/in01_img_folders-1x.webp" srcset="assets/in01_img_folders-1x.webp 1x, assets/in01_img_folders.webp 2x" alt="推動後的 Figma 雲端資料夾：依五大類整理，封面樣式統一" loading="lazy" decoding="async" width="2000" height="1077"></figure>
+                <figure class="pb-fig"><figcaption>Figma 檔內頁面結構</figcaption><img src="assets/in01_img_pages-1x.webp" srcset="assets/in01_img_pages-1x.webp 1x, assets/in01_img_pages.webp 2x" alt="推動後的 Figma 頁面清單：Cover、Handoff、Design、Archive" loading="lazy" decoding="async" width="466" height="1206"></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dc-import>
+
+  </main>
+</div>
+
+<dc-import name="Com_ToTop" tone="dark" hint-size="0px,0px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { leaving: false, loaded: false };
+
+  componentDidMount() {
+    const go = () => window.PT ? window.PT.mount(this, { fallback: 4000, hero: true }) : setTimeout(go, 16);
+    go();
+  }
+  componentWillUnmount() { clearTimeout(this._fallback); }
+
+  navigate(url) { window.PT ? window.PT.navigate(this, url) : (window.location.href = url); }
+
+  renderVals() {
+    return {
+      people: [
+        { avatar: 'assets/uiux_img_user2.webp', name: 'PlayHorny', role: 'Designer (Me)' }
+      ],
+      software: [
+        { icon: 'assets/uiux_icon_figma.webp', label: 'Figma' }
+      ],
+      goBack: () => this.navigate('Page_UIUX.dc.html'),
+      nav: (url) => this.navigate(url),
+      ...(window.PT ? window.PT.cover(this) : { coverOpacity: 1, coverPointer: 'auto', leaveOpacity: 0, coverBg: '#1B1C20' })
+    };
+  }
+}
+</script>
+</body>
+</html>
